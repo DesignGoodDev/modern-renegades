@@ -21,7 +21,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -49,19 +48,73 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/* Color Utility Classes
+--------------------------------------------- */
+@import url("https://use.typekit.net/lls0cqm.css");
+.has-white-color {
+	color: #fff;
+}
+
+.has-white-background-color {
+	background-color: #fff;
+}
+
+.has-cream-color {
+	color: #F3EEED;
+}
+
+.has-cream-background-color {
+	background-color: #F3EEED;
+}
+
+.has-almond-color {
+	color: #ECE1DF;
+}
+
+.has-almond-background-color {
+	background-color: #ECE1DF;
+}
+
+.has-rose-color {
+	color: #D5B1A9;
+}
+
+.has-rose-background-color {
+	background-color: #D5B1A9;
+}
+
+.has-adobe-color {
+	color: #BB8472;
+}
+
+.has-adobe-background-color {
+	background-color: #BB8472;
+}
+
+.has-plum-color {
+	color: #2A1048;
+}
+
+.has-plum-background-color {
+	background-color: #2A1048;
+}
+
+.has-textgray-color {
+	color: #3B3835;
+}
+
+.has-textgray-background-color {
+	background-color: #3B3835;
+}
 
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -73,7 +126,6 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
 /**
  * Remove the margin in all browsers.
  */
@@ -99,7 +151,6 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -121,7 +172,6 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -187,7 +237,6 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -197,7 +246,6 @@ img {
 
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -343,7 +391,6 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -360,7 +407,6 @@ summary {
 
 /* Misc
 	 ========================================================================== */
-
 /**
  * Add the correct display in IE 10+.
  */
@@ -377,7 +423,6 @@ template {
 
 /* Box sizing
 --------------------------------------------- */
-
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -393,7 +438,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -402,9 +446,10 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1rem;
+	color: #3B3835;
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 1.1875rem;
 	line-height: 1.5;
 }
 
@@ -415,6 +460,54 @@ h4,
 h5,
 h6 {
 	clear: both;
+	color: #BB8472;
+	margin-top: 0;
+}
+
+h1, .h1 {
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 700;
+	font-size: 2.5rem;
+	line-height: 1.125;
+}
+
+h2, .h2 {
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 700;
+	font-size: 2.125rem;
+	line-height: 1.125;
+}
+
+h3, .h3 {
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 1.625rem;
+	text-transform: uppercase;
+	letter-spacing: 0.12rem;
+}
+
+h4, .h4 {
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 1.625rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06rem;
+}
+
+h5, .h5 {
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 600;
+	font-size: 1.1875rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08rem;
+}
+
+h6, .h6 {
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 1.1875rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08rem;
 }
 
 p {
@@ -461,12 +554,13 @@ acronym {
 
 mark,
 ins {
-	background: #fff9c0;
+	background: #ECE1DF;
 	text-decoration: none;
 }
 
-big {
-	font-size: 125%;
+big,
+.big {
+	font-size: 121%;
 }
 
 /* Elements
@@ -476,7 +570,7 @@ body {
 }
 
 hr {
-	background-color: #ccc;
+	background-color: #BB8472;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -533,59 +627,63 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #2A1048;
+	font-weight: 700;
 }
 
-a:visited {
-	color: #800080;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: #191970;
+a:hover, a:focus, a:active {
+	color: #BB8472;
 }
 
 a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
 }
 
 /* Forms
 --------------------------------------------- */
-button,
+button:not(.components-button),
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+input[type="submit"],
+.wp-block-button a,
+.wp-block-button .wp-block-button__link {
+	background: #2A1048;
+	border: 0;
+	border-radius: 1.25rem;
+	color: #fff;
+	cursor: pointer;
+	font-size: 0.8125rem;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	padding: 0.9em 1.25em 0.9em;
 }
 
-button:hover,
+button:not(.components-button):hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+input[type="submit"]:hover,
+.wp-block-button a:hover,
+.wp-block-button .wp-block-button__link:hover {
+	background: linear-gradient(180deg, #D5B1A9 0%, #2A1048 100%);
 }
 
-button:active,
-button:focus,
+button:not(.components-button):active, button:not(.components-button):focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+input[type="submit"]:focus,
+.wp-block-button a:active,
+.wp-block-button a:focus,
+.wp-block-button .wp-block-button__link:active,
+.wp-block-button .wp-block-button__link:focus {
+	outline: 2px auto #BB8472;
 }
 
 input[type="text"],
@@ -604,8 +702,8 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
+	color: #BB8472;
+	border: 1px solid #BB8472;
 	border-radius: 3px;
 	padding: 3px;
 }
@@ -626,11 +724,11 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+	color: #3B3835;
 }
 
 select {
-	border: 1px solid #ccc;
+	border: 1px solid #BB8472;
 }
 
 textarea {
@@ -640,11 +738,9 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
@@ -694,7 +790,23 @@ textarea {
 
 .main-navigation a {
 	display: block;
+	color: #BB8472;
 	text-decoration: none;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+}
+
+.main-navigation a:hover {
+	color: #2A1048;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+	color: #2A1048;
 }
 
 /* Small menu. */
@@ -704,20 +816,16 @@ textarea {
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
-
 	.main-navigation ul {
 		display: flex;
 	}
 }
 
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -747,24 +855,29 @@ textarea {
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+}
+
+.wp-block-group__inner-container {
+	width: 90%;
+	max-width: 780px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 768px) {
+	.wp-block-group__inner-container {
+		width: 80%;
+	}
+}
+
+.wp-block-columns {
+	margin-bottom: 0;
 }
 
 /* Comments
@@ -877,10 +990,8 @@ textarea {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
 /* Jetpack infinite scroll
 --------------------------------------------- */
-
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -895,10 +1006,8 @@ textarea {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 /* Accessibility
 --------------------------------------------- */
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -941,23 +1050,17 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
 	/*rtl:ignore*/
 	float: left;
-
 	/*rtl:ignore*/
 	margin-right: 1.5em;
-	margin-bottom: 1.5em;
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
-
 	/*rtl:ignore*/
 	margin-left: 1.5em;
-	margin-bottom: 1.5em;
 }
 
 .aligncenter {
@@ -965,5 +1068,11 @@ textarea {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 1.5em;
 }
+
+.wp-block-buttons.aligncenter .wp-block-buttons .wp-block-button {
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+/*# sourceMappingURL=style.css.map */

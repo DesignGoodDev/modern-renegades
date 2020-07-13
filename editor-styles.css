@@ -1,0 +1,284 @@
+@import url("https://use.typekit.net/lls0cqm.css");
+.editor-styles-wrapper {
+	/* Color Utility Classes
+--------------------------------------------- */
+	/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+.editor-styles-wrapper .has-white-color {
+	color: #fff;
+}
+
+.editor-styles-wrapper .has-white-background-color {
+	background-color: #fff;
+}
+
+.editor-styles-wrapper .has-cream-color {
+	color: #F3EEED;
+}
+
+.editor-styles-wrapper .has-cream-background-color {
+	background-color: #F3EEED;
+}
+
+.editor-styles-wrapper .has-almond-color {
+	color: #ECE1DF;
+}
+
+.editor-styles-wrapper .has-almond-background-color {
+	background-color: #ECE1DF;
+}
+
+.editor-styles-wrapper .has-rose-color {
+	color: #D5B1A9;
+}
+
+.editor-styles-wrapper .has-rose-background-color {
+	background-color: #D5B1A9;
+}
+
+.editor-styles-wrapper .has-adobe-color {
+	color: #BB8472;
+}
+
+.editor-styles-wrapper .has-adobe-background-color {
+	background-color: #BB8472;
+}
+
+.editor-styles-wrapper .has-plum-color {
+	color: #2A1048;
+}
+
+.editor-styles-wrapper .has-plum-background-color {
+	background-color: #2A1048;
+}
+
+.editor-styles-wrapper .has-textgray-color {
+	color: #3B3835;
+}
+
+.editor-styles-wrapper .has-textgray-background-color {
+	background-color: #3B3835;
+}
+
+.editor-styles-wrapper *,
+.editor-styles-wrapper *::before,
+.editor-styles-wrapper *::after {
+	box-sizing: inherit;
+}
+
+.editor-styles-wrapper html {
+	box-sizing: border-box;
+}
+
+.editor-styles-wrapper body,
+.editor-styles-wrapper button,
+.editor-styles-wrapper input,
+.editor-styles-wrapper select,
+.editor-styles-wrapper optgroup,
+.editor-styles-wrapper textarea {
+	color: #3B3835;
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 1.1875rem;
+	line-height: 1.5;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	clear: both;
+	color: #BB8472;
+	margin-top: 0;
+}
+
+.editor-styles-wrapper h1, .editor-styles-wrapper .h1 {
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 700;
+	font-size: 2.5rem;
+	line-height: 1.125;
+}
+
+.editor-styles-wrapper h2, .editor-styles-wrapper .h2 {
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 700;
+	font-size: 2.125rem;
+	line-height: 1.125;
+}
+
+.editor-styles-wrapper h3, .editor-styles-wrapper .h3 {
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 1.625rem;
+	text-transform: uppercase;
+	letter-spacing: 0.12rem;
+}
+
+.editor-styles-wrapper h4, .editor-styles-wrapper .h4 {
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 1.625rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06rem;
+}
+
+.editor-styles-wrapper h5, .editor-styles-wrapper .h5 {
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 600;
+	font-size: 1.1875rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08rem;
+}
+
+.editor-styles-wrapper h6, .editor-styles-wrapper .h6 {
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 1.1875rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08rem;
+}
+
+.editor-styles-wrapper p {
+	margin-bottom: 1.5em;
+}
+
+.editor-styles-wrapper dfn,
+.editor-styles-wrapper cite,
+.editor-styles-wrapper em,
+.editor-styles-wrapper i {
+	font-style: italic;
+}
+
+.editor-styles-wrapper blockquote {
+	margin: 0 1.5em;
+}
+
+.editor-styles-wrapper address {
+	margin: 0 0 1.5em;
+}
+
+.editor-styles-wrapper pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+.editor-styles-wrapper code,
+.editor-styles-wrapper kbd,
+.editor-styles-wrapper tt,
+.editor-styles-wrapper var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+.editor-styles-wrapper abbr,
+.editor-styles-wrapper acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+.editor-styles-wrapper mark,
+.editor-styles-wrapper ins {
+	background: #ECE1DF;
+	text-decoration: none;
+}
+
+.editor-styles-wrapper big,
+.editor-styles-wrapper .big {
+	font-size: 121%;
+}
+
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+	margin: 0 0 1.5em 3em;
+}
+
+.editor-styles-wrapper ul {
+	list-style: disc;
+}
+
+.editor-styles-wrapper ol {
+	list-style: decimal;
+}
+
+.editor-styles-wrapper li > ul,
+.editor-styles-wrapper li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+.editor-styles-wrapper dt {
+	font-weight: 700;
+}
+
+.editor-styles-wrapper dd {
+	margin: 0 1.5em 1.5em;
+}
+
+.editor-styles-wrapper a {
+	color: #2A1048;
+	font-weight: 700;
+}
+
+.editor-styles-wrapper a:hover, .editor-styles-wrapper a:focus, .editor-styles-wrapper a:active {
+	color: #BB8472;
+}
+
+.editor-styles-wrapper a:focus {
+	outline: thin dotted;
+}
+
+.editor-styles-wrapper a:hover, .editor-styles-wrapper a:active {
+	outline: 0;
+}
+
+.editor-styles-wrapper button:not(.components-button),
+.editor-styles-wrapper input[type="button"],
+.editor-styles-wrapper input[type="reset"],
+.editor-styles-wrapper input[type="submit"],
+.editor-styles-wrapper .wp-block-button a,
+.editor-styles-wrapper .wp-block-button .wp-block-button__link {
+	background: #2A1048;
+	border: 0;
+	border-radius: 1.25rem;
+	color: #fff;
+	cursor: pointer;
+	font-size: 0.8125rem;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	padding: 0.9em 1.25em 0.9em;
+}
+
+.editor-styles-wrapper button:not(.components-button):hover,
+.editor-styles-wrapper input[type="button"]:hover,
+.editor-styles-wrapper input[type="reset"]:hover,
+.editor-styles-wrapper input[type="submit"]:hover,
+.editor-styles-wrapper .wp-block-button a:hover,
+.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover {
+	background: linear-gradient(180deg, #D5B1A9 0%, #2A1048 100%);
+}
+
+.editor-styles-wrapper button:not(.components-button):active, .editor-styles-wrapper button:not(.components-button):focus,
+.editor-styles-wrapper input[type="button"]:active,
+.editor-styles-wrapper input[type="button"]:focus,
+.editor-styles-wrapper input[type="reset"]:active,
+.editor-styles-wrapper input[type="reset"]:focus,
+.editor-styles-wrapper input[type="submit"]:active,
+.editor-styles-wrapper input[type="submit"]:focus,
+.editor-styles-wrapper .wp-block-button a:active,
+.editor-styles-wrapper .wp-block-button a:focus,
+.editor-styles-wrapper .wp-block-button .wp-block-button__link:active,
+.editor-styles-wrapper .wp-block-button .wp-block-button__link:focus {
+	outline: 2px auto #BB8472;
+}
+
+/*# sourceMappingURL=editor-styles.css.map */

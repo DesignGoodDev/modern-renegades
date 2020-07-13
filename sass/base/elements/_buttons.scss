@@ -1,21 +1,26 @@
-button,
+button:not(.components-button),
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
+input[type="submit"],
+.wp-block-button a,
+.wp-block-button .wp-block-button__link {
 	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
+	border: 0;
+	border-radius: 1.25rem; // 20px
+	color: $white;
+	cursor: pointer;
+	font-size: 0.8125rem; // 13px
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem; // 0.8px
+	padding: 0.9em 1.25em 0.9em;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		background: linear-gradient(180deg, $rose 0%, $plum 100%);
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		outline: 2px auto $adobe;
 	}
 }

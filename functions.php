@@ -47,6 +47,12 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
@@ -72,16 +78,16 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'modern_renegades_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
+		// add_theme_support(
+		// 	'custom-background',
+		// 	apply_filters(
+		// 		'modern_renegades_custom_background_args',
+		// 		array(
+		// 			'default-color' => 'ffffff',
+		// 			'default-image' => '',
+		// 		)
+		// 	)
+		// );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -91,15 +97,15 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
+		// add_theme_support(
+		// 	'custom-logo',
+		// 	array(
+		// 		'height'      => 250,
+		// 		'width'       => 250,
+		// 		'flex-width'  => true,
+		// 		'flex-height' => true,
+		// 	)
+		// );
 	}
 endif;
 add_action( 'after_setup_theme', 'modern_renegades_setup' );
@@ -181,3 +187,89 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+/**
+ * Enqueue block editor styles.
+ */
+function modern_renegades_block_editor_styles() {
+
+	// Enqueue the editor styles.
+	wp_enqueue_style( 'modern-renegades-block-editor-styles', get_theme_file_uri( 'editor-styles.css' ), array(), wp_get_theme()->get( 'Version' ), 'all' );
+
+}
+add_action( 'enqueue_block_editor_assets', 'modern_renegades_block_editor_styles', 1, 1 );
+
+
+
+/**
+ * Enqueue classic editor styles.
+ */
+function modern_renegades_classic_editor_styles() {
+
+	$classic_editor_styles = array(
+		// if these end up being different than for block editor:
+		// 'editor-style-classic.css',
+		'editor-styles.css'
+	);
+
+	add_editor_style( $classic_editor_styles );
+
+}
+add_action( 'init', 'modern_renegades_classic_editor_styles' );
+
+
+/**
+ * Functions that relate to the Block Editor
+ * FYI: Styles for frontend in /components/content/posts-and-pages, /base/elements/buttons
+ */
+function modern_renegades_block_editor_settings() {
+
+	// Disable Custom Colors
+	add_theme_support('disable-custom-colors');
+
+	// Disable Custom Font Sizes
+	add_theme_support('disable-custom-font-sizes');
+
+	// Add our own Color Palette
+	add_theme_support('editor-color-palette', array(
+		array(
+			'name'	=> 'Cream',
+			'slug'	=> 'cream',
+			'color'	=> '#F3EEED',
+		),
+		array(
+			'name'	=> 'Almond',
+			'slug'	=> 'almond',
+			'color'	=> '#ECE1DF',
+		),
+		array(
+			'name'	=> 'Rose',
+			'slug'	=> 'rose',
+			'color'	=> '#D5B1A9',
+		),
+		array(
+			'name'	=> 'Adobe',
+			'slug'	=> 'adobe',
+			'color'	=> '#BB8472',
+		),
+		array(
+			'name'	=> 'Plum',
+			'slug'	=> 'plum',
+			'color'	=> '#2A1048',
+		),
+		array(
+			'name'	=> 'Text Gray',
+			'slug'	=> 'text-gray',
+			'color'	=> '#3B3835',
+		),
+		array(
+			'name'	=> 'White',
+			'slug'	=> 'white',
+			'color'	=> '#FFFFFF',
+		),
+	));
+
+	add_theme_support( 'editor-styles' );
+
+}
+add_action('after_setup_theme', 'modern_renegades_block_editor_settings');

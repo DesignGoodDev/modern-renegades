@@ -1,0 +1,16 @@
+
+
+.editor-styles-wrapper {
+  @import "abstracts/variables/colors";
+  @import "abstracts/variables/typography";
+
+  @import "generic/box-sizing";
+
+  @import "base/typography/typography";
+  font-family: $font__main !important;
+
+  @import "base/elements/lists";
+  @import "base/elements/links";
+
+  @import "base/elements/buttons";
+}

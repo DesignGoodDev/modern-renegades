@@ -5,7 +5,7 @@
 
 	/*rtl:ignore*/
 	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+	// margin-bottom: 1.5em;
 }
 
 .alignright {
@@ -15,7 +15,7 @@
 
 	/*rtl:ignore*/
 	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+	// margin-bottom: 1.5em;
 }
 
 .aligncenter {
@@ -23,5 +23,12 @@
 
 	@include center-block;
 
-	margin-bottom: 1.5em;
+	// margin-bottom: 1.5em;
+}
+
+.wp-block-buttons.aligncenter {
+	.wp-block-buttons .wp-block-button {
+		margin-right: 4px;
+		margin-left: 4px;
+	}
 }

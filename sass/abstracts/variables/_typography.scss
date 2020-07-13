@@ -1,7 +1,14 @@
+// Angie Sans Demi - 600, Bold - 700
+// Brandon Grotesque Regular - 400 +italic, Medium - 500 +italic, Bold - 700 +italic
+@import url("https://use.typekit.net/lls0cqm.css");
+
 // stylelint-disable value-keyword-case
-$font__main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+// $font__main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font__main: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+$font__headings: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+
 // stylelint-enable value-keyword-case
 $font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", courier, monospace;
-$font__line-height-body: 1.5;
+$font__line-height-body: 1.5; //1.42 in design
 $font__line-height-pre: 1.6;

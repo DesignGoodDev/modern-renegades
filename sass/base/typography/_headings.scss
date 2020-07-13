@@ -5,4 +5,52 @@ h4,
 h5,
 h6 {
 	clear: both;
+	color: $adobe;
+	margin-top: 0;
+}
+
+h1, .h1 {
+	font-family: $font__headings;
+	font-weight: 700;
+	font-size: 2.5rem; // 40px
+	line-height: 1.125;
+}
+
+h2, .h2 {
+	font-family: $font__headings;
+	font-weight: 700;
+	font-size: 2.125rem; // 34px
+	line-height: 1.125;
+}
+
+h3, .h3 {
+	font-family: $font__main;
+	font-weight: 400;
+	font-size: 1.625rem; // 26px
+	text-transform: uppercase;
+	letter-spacing: 0.12rem; // 1.89px
+}
+
+h4, .h4 {
+	font-family: $font__main;
+	font-weight: 400;
+	font-size: 1.625rem; // 14px
+	text-transform: uppercase;
+	letter-spacing: 0.06rem; // 0.93px
+}
+
+h5, .h5 {
+	font-family: $font__headings;
+	font-weight: 600;
+	font-size: 1.1875rem; // 19px
+	text-transform: uppercase;
+	letter-spacing: 0.08rem; // 1.27px
+}
+
+h6, .h6 {
+	font-family: $font__main;
+	font-weight: 400;
+	font-size: 1.1875rem; // 19px
+	text-transform: uppercase;
+	letter-spacing: 0.08rem; // 1.27px
 }
