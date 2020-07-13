@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="24px" viewBox="0 0 57 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-podcasts-stitcher</title>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Podcast-Landing-Page-" transform="translate(-484.000000, -3941.000000)" fill="#BB8472">
+            <g id="icon-podcasts-stitcher" transform="translate(484.000000, 3941.000000)">
+                <polygon id="Fill-1" points="0 22 10 22 10 4 0 4"></polygon>
+                <polygon id="Fill-2" points="47 20 57 20 57 3 47 3"></polygon>
+                <polygon id="Fill-3" points="11.75 22 21.75 22 21.75 2 11.75 2"></polygon>
+                <polygon id="Fill-4" points="35.25 22 45.25 22 45.25 0 35.25 0"></polygon>
+                <polygon id="Fill-5" points="23.5 24 33.5 24 33.5 2 23.5 2"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-new-tab</title>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Episode-Page" transform="translate(-518.000000, -2153.000000)" fill="#2A1048" stroke="#2A1048" stroke-width="0.5">
+            <g id="icon-new-tab" transform="translate(519.000000, 2154.000000)">
+                <path d="M12.374775,6.74999165 L12.374775,12.3747597 L1.125225,12.3747597 L1.125225,1.12522361 L6.75,1.12522361 L6.75,0 L1.125225,0 C0.50625,0 0,0.506249374 0,1.12522361 L0,12.3754347 C0,12.9937508 0.50625,13.5 1.125225,13.5 L12.374775,13.5 C12.99375,13.5 13.5,12.9937508 13.5,12.3747766 L13.5,6.75000852 L12.374775,6.74999165 Z" id="Fill-1"></path>
+                <path d="M13.5,4.50023625 L13.4993402,0.562276406 C13.5,0.25180938 13.2481896,0 12.9377235,0 L8.99977444,0 L8.99977444,1.12456969 L11.5784425,1.12456969 L6.75,5.95437551 L7.5456223,6.75 L12.3747398,1.92154418 L12.3747398,4.50021938 L13.5,4.49955956 L13.5,4.50023625 Z" id="Fill-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>
