@@ -5,9 +5,14 @@ h4,
 h5,
 h6 {
 	clear: both;
-	color: $adobe;
 	margin-top: 0;
+
+	// :not(.has-text-color) & {
+	// 	color: $adobe;
+	// }
 }
+
+
 
 h1, .h1 {
 	font-family: $font__headings;

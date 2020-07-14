@@ -9,3 +9,18 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+// Content
+$content-width: 780px;
+
+// Breakpoints
+$phone: 320px;
+$smallMax: 599px;
+$small: 600px;
+$mediumMax: 761px;
+$medium: 762px;
+$large: 960px;
+$huge: 1440px;
+
+$mobile: $medium;
+$mobileMax: $mediumMax;

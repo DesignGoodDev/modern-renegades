@@ -21,26 +21,3 @@
 	clear: both;
 	// margin: 0 0 1.5em;
 }
-
-.wp-block-group {
-
-}
-
-.wp-block-group__inner-container {
-	width: 90%;
-	max-width: 780px;
-	margin-left: auto;
-	margin-right: auto;
-
-	@media (min-width: 768px) {
-		width: 80%;
-	}
-}
-
-.wp-block-image {
-
-}
-
-.wp-block-columns {
-	margin-bottom: 0;
-}
