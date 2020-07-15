@@ -14,6 +14,21 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+// WP Cleanup
+include_once( get_template_directory() . '/inc/customizer.php');
+
+// Theme Functionality
+include_once( get_template_directory() . '/inc/template-functions.php');
+include_once( get_template_directory() . '/inc/template-tags.php');
+include_once( get_template_directory() . '/inc/widgets.php');
+include_once( get_template_directory() . '/inc/custom-header.php');
+
+// Plugin Utilities
+include_once( get_template_directory() . '/inc/acf.php');
+if ( defined( 'JETPACK__VERSION' ) ) {
+	include_once( get_template_directory() . '/inc/jetpack.php' );
+}
+
 /**
  * Theme Content Width
  */
@@ -46,9 +61,9 @@ add_action( 'wp_enqueue_scripts', 'modern_renegades_global_enqueues' );
  */
 function modern_renegades_block_editor_enqueues() {
 
-	wp_enqueue_style( 'modern-renegades-block-editor-styles', get_theme_file_uri( 'editor-styles.css' ), array(), filemtime( get_stylesheet_directory( 'editor-styles.css' ) ), 'all' );
+	wp_enqueue_style( 'modern-renegades-block-editor-styles', get_template_directory_uri() . '/editor-styles.css' , array(), filemtime( get_template_directory() . '/editor-styles.css' ), 'all' );
 
-	wp_enqueue_script( 'modern-renegades-block-editor-styles', get_stylesheet_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), filemtime( get_stylesheet_directory() . '/js/editor.js' ), true);
+	wp_enqueue_script( 'modern-renegades-block-editor-scripts', get_template_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), filemtime( get_template_directory() . '/js/editor.js' ), true);
 
 }
 add_action( 'enqueue_block_editor_assets', 'modern_renegades_block_editor_enqueues', 1, 1 );
@@ -60,23 +75,8 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 
 	function modern_renegades_setup() {
 
+		// Enable translation of theme
 		load_theme_textdomain( 'modern-renegades', get_template_directory() . '/languages' );
-
-		// WP Cleanup
-		include_once( get_stylesheet_directory() . '/inc/customizer.php');
-
-		// Theme Functionality
-		include_once( get_stylesheet_directory() . '/inc/template-functions.php');
-		include_once( get_stylesheet_directory() . '/inc/template-tags.php');
-		include_once( get_stylesheet_directory() . '/inc/widgets.php');
-		include_once( get_stylesheet_directory() . '/inc/custom-header.php');
-
-		// Plugin Utilities
-		include_once( get_stylesheet_directory() . '/inc/acf.php');
-
-		if ( defined( 'JETPACK__VERSION' ) ) {
-			require get_template_directory() . '/inc/jetpack.php';
-		}
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
@@ -89,8 +89,8 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 				'comment-list',
 				'gallery',
 				'caption',
-				'style',
-				'script',
+				// 'style',
+				// 'script',
 			)
 		);
 
@@ -109,7 +109,7 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 
 		// Enable Custom Editor Styles
 		add_theme_support( 'editor-styles' );
-		add_editor_style( 'editor-styles.css' );
+		// add_editor_style( 'editor-styles.css' );
 
 		// Disable Custom Font Sizes
 		add_theme_support('disable-custom-font-sizes');

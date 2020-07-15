@@ -477,6 +477,7 @@ html {
 }
 
 .editor-styles-wrapper p {
+	margin-top: 0;
 	margin-bottom: 1.5em;
 }
 
@@ -489,6 +490,31 @@ html {
 
 .editor-styles-wrapper blockquote {
 	margin: 0 1.5em;
+}
+
+.editor-styles-wrapper blockquote p {
+	position: relative;
+	font-style: italic;
+}
+
+.editor-styles-wrapper blockquote p::before {
+	content: '\201C';
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 2.625rem;
+	position: absolute;
+	top: -1rem;
+	left: -2rem;
+}
+
+.has-plum-background-color .editor-styles-wrapper blockquote p::before {
+	color: #F3EEED;
+	opacity: 0.37;
+}
+
+.editor-styles-wrapper blockquote p::after {
+	content: '\201D';
 }
 
 .editor-styles-wrapper address {
@@ -930,10 +956,6 @@ html {
 	margin-right: auto;
 }
 
-.editor-styles-wrapper .editor-post-title__block.wp-block {
-	max-width: 780px;
-}
-
 .editor-styles-wrapper .wp-block {
 	max-width: 780px;
 }
@@ -1002,6 +1024,74 @@ html {
 	font-size: 1.3125rem;
 	letter-spacing: 0.0875;
 	text-decoration: none;
+}
+
+.editor-styles-wrapper .half-half {
+	width: 100%;
+}
+
+.editor-styles-wrapper .half-half--image {
+	position: relative;
+}
+
+.editor-styles-wrapper .half-half--image img {
+	display: block;
+}
+
+.editor-styles-wrapper .half-half--content {
+	padding: 60px 5%;
+}
+
+@media (min-width: 762px) {
+	.editor-styles-wrapper .half-half {
+		display: flex;
+		align-items: stretch;
+		justify-content: stretch;
+		max-height: 90vh;
+	}
+	.editor-styles-wrapper .half-half--image, .editor-styles-wrapper .half-half--content {
+		flex: 1 0 50%;
+		width: 50%;
+		max-width: 50%;
+	}
+	.editor-styles-wrapper .half-half--content {
+		width: 100%;
+		padding: 80px 5% 90px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: stretch;
+	}
+}
+
+@media (min-width: 762px) {
+	.editor-styles-wrapper .image--cover {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		overflow: hidden;
+	}
+}
+
+.editor-styles-wrapper [class^='image__oval'] {
+	position: absolute;
+	display: block;
+	width: 90%;
+	height: auto;
+	padding-top: 60%;
+	border-radius: 400px;
+	border: 1px solid #D5B1A9;
+	top: 5%;
+	right: -5%;
+	z-index: 1;
+}
+
+@media (min-width: 762px) {
+	.editor-styles-wrapper [class^='image__oval'] {
+		width: 80%;
+		padding-top: 50%;
+	}
 }
 
 /*# sourceMappingURL=editor-styles.css.map */
