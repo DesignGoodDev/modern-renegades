@@ -4,9 +4,45 @@
 
 .editor-styles-wrapper {
 
-  @import "base/base";
+  // @import "base/base";
+
+  @import "base/typography/typography";
+  @import "base/elements/body";
+  @import "base/elements/hr";
+  @import "base/elements/lists";
+  @import "base/elements/media";
+  @import "base/elements/tables";
+  @import "base/elements/links";
+  @import "base/elements/fields";
 
   font-family: $font__main !important;
+
+  .wp-block-button a,
+  .wp-block-button .wp-block-button__link {
+    background: $color__background-button;
+    border: 0;
+    border-radius: 1.25rem; // 20px
+    color: $white;
+    cursor: pointer;
+    font-size: 0.8125rem; // 13px
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem; // 0.8px
+    padding: 0.9em 1.25em 0.9em;
+
+    &:hover {
+      background: linear-gradient(180deg, $rose 0%, $plum 100%);
+    }
+
+    &:active,
+    &:focus {
+      outline: 2px auto $adobe;
+    }
+  }
+
+  .wp-block p {
+    margin-top: 0;
+  }
 
   @import "components/components";
   @import "utilities/alignments";

@@ -109,7 +109,7 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 
 		// Enable Custom Editor Styles
 		add_theme_support( 'editor-styles' );
-		// add_editor_style( 'editor-styles.css' );
+		add_editor_style( 'editor-styles.css' );
 
 		// Disable Custom Font Sizes
 		add_theme_support('disable-custom-font-sizes');

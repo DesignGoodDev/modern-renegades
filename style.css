@@ -522,7 +522,7 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 1.5rem;
 }
 
 blockquote p {
@@ -537,8 +537,8 @@ blockquote p::before {
 	font-style: normal;
 	font-size: 2.625rem;
 	position: absolute;
-	top: -1rem;
-	left: -2rem;
+	top: -0.875rem;
+	left: -1.5rem;
 }
 
 .has-plum-background-color blockquote p::before {
@@ -672,7 +672,7 @@ a:hover, a:active {
 
 /* Forms
 --------------------------------------------- */
-button:not(.components-button),
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
@@ -690,7 +690,7 @@ input[type="submit"],
 	padding: 0.9em 1.25em 0.9em;
 }
 
-button:not(.components-button):hover,
+button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
@@ -699,7 +699,7 @@ input[type="submit"]:hover,
 	background: linear-gradient(180deg, #D5B1A9 0%, #2A1048 100%);
 }
 
-button:not(.components-button):active, button:not(.components-button):focus,
+button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -1188,6 +1188,25 @@ textarea {
 		justify-content: center;
 		align-items: stretch;
 	}
+}
+
+.half-half .swiper-container {
+	max-width: 100%;
+	padding-bottom: 4rem;
+}
+
+.half-half .swiper-pagination-bullet {
+	background: #F3EEED;
+	opacity: 0.25;
+}
+
+.half-half .swiper-pagination-bullet-active {
+	opacity: 1;
+}
+
+.half-half .swiper-container-horizontal > .swiper-pagination-bullets {
+	left: 1.5rem;
+	width: auto;
 }
 
 @media (min-width: 762px) {

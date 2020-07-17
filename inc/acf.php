@@ -44,7 +44,11 @@ function modern_renegades_register_blocks() {
     'name'            => 'half-half-carousel',
     'title'           => __('Half and Half - Quote Carousel', 'modern_renegades'),
     'render_template' => 'template-parts/block-half-half-carousel.php',
-    'enqueue_script'  => 'https://unpkg.com/swiper/swiper-bundle.min.js',
+    'enqueue_assets'  => function() {
+      wp_enqueue_style('block-half-half-carousel', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+      wp_enqueue_script('block-half-half-carousel', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), '', true);
+      wp_enqueue_script('block-half-half-carousel-init', get_template_directory_uri() . '/template-parts/block-half-half-carousel.js', array(), '', true);
+    },
     'category'        => 'layout',
     'icon'            => 'layout',
     'mode'            => 'auto',
