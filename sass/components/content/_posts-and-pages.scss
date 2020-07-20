@@ -2,6 +2,8 @@
 	display: block;
 }
 
+// these classes are applied to the body element
+// depending on the post-type
 .post,
 .page {
 	// margin: 0 0 1.5em;
@@ -11,10 +13,50 @@
 	display: none;
 }
 
-.page-content,
-.entry-content,
+// we are using this element as our site-wrap
+// and as the "relative" parent for our
+// fixed &/or absolute nav
+// if needed, would could instead use
+// the .site-main to hide overflow-x
+#page {
+	overflow-x: hidden;
+	position: relative;
+	margin-top: 70px;
+}
+
+.entry-header {
+	margin: 0 auto 2rem;
+
+	.entry-title {
+		color: $adobe;
+	}
+
+	@media (min-width: $mobile) {
+		text-align: center;
+	}
+}
+
+.page-content {
+
+}
+
+.entry-header,
+.post .entry-content,
+.entry-footer,
+.comments-area,
 .entry-summary {
-	// margin: 1.5em 0 0;
+	width: 90%;
+	max-width: $content-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post .entry-content {
+	max-width: 715px;
+}
+
+.entry-footer {
+
 }
 
 .page-links {

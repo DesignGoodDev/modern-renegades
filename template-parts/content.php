@@ -10,10 +10,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php modern_renegades_post_thumbnail(); ?>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="entry-title h2">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -23,13 +26,11 @@
 			<div class="entry-meta">
 				<?php
 				modern_renegades_posted_on();
-				modern_renegades_posted_by();
+				// modern_renegades_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php modern_renegades_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -58,6 +59,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php modern_renegades_entry_footer(); ?>
+		<?php //modern_renegades_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

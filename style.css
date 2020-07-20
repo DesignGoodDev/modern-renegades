@@ -46,6 +46,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Utilities
 	- Accessibility
 	- Alignments
+	- Blocks
 
 --------------------------------------------------------------*/
 /* Color Utility Classes
@@ -461,6 +462,7 @@ h5,
 h6 {
 	clear: both;
 	margin-top: 0;
+	color: #BB8472;
 }
 
 h1, .h1 {
@@ -488,7 +490,7 @@ h3, .h3 {
 h4, .h4 {
 	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	font-weight: 400;
-	font-size: 1.625rem;
+	font-size: 0.875rem;
 	text-transform: uppercase;
 	letter-spacing: 0.06rem;
 }
@@ -511,7 +513,7 @@ h6, .h6 {
 
 p {
 	margin-top: 0;
-	margin-bottom: 1.5em;
+	margin-bottom: 1rem;
 }
 
 dfn,
@@ -593,7 +595,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #fff;
+	background: #F3EEED;
 }
 
 hr {
@@ -676,11 +678,13 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+.button a,
+a.button,
 .wp-block-button a,
 .wp-block-button .wp-block-button__link {
 	background: #2A1048;
 	border: 0;
-	border-radius: 1.25rem;
+	border-radius: 1.5rem;
 	color: #fff;
 	cursor: pointer;
 	font-size: 0.8125rem;
@@ -694,6 +698,8 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
+.button a:hover,
+a.button:hover,
 .wp-block-button a:hover,
 .wp-block-button .wp-block-button__link:hover {
 	background: linear-gradient(180deg, #D5B1A9 0%, #2A1048 100%);
@@ -706,6 +712,10 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus,
+.button a:active,
+.button a:focus,
+a.button:active,
+a.button:focus,
 .wp-block-button a:active,
 .wp-block-button a:focus,
 .wp-block-button .wp-block-button__link:active,
@@ -729,9 +739,9 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #BB8472;
-	border: 1px solid #BB8472;
-	border-radius: 3px;
+	color: #3B3835;
+	border: 1px solid transparent;
+	border-radius: 0;
 	padding: 3px;
 }
 
@@ -751,11 +761,11 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #3B3835;
+	color: #BB8472;
 }
 
 select {
-	border: 1px solid #BB8472;
+	border: 1px solid transparent;
 }
 
 textarea {
@@ -770,16 +780,51 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
-	display: block;
+#wpadminbar {
+	position: absolute;
+	display: none;
+}
+
+.site-header {
+	position: fixed;
 	width: 100%;
+	height: 70px;
+	padding-left: 22px;
+	padding-right: 22px;
+	top: 0;
+	left: 0;
+	background-color: #F3EEED;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 2;
+}
+
+.site-branding {
+	z-index: 1;
+}
+
+.site-branding .site-title {
+	line-height: 1;
+}
+
+.site-branding h1, .site-branding p {
+	margin-bottom: 0;
+}
+
+.main-navigation {
+	display: flex;
 }
 
 .main-navigation ul {
-	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .main-navigation ul ul {
@@ -813,13 +858,14 @@ textarea {
 
 .main-navigation li {
 	position: relative;
+	margin-bottom: 20px;
 }
 
 .main-navigation a {
 	display: block;
 	color: #BB8472;
 	text-decoration: none;
-	font-size: 0.8125rem;
+	font-size: 0.9375rem;
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 0.05rem;
@@ -829,6 +875,7 @@ textarea {
 	color: #2A1048;
 }
 
+.main-navigation .current_page_parent > a,
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
@@ -836,25 +883,123 @@ textarea {
 	color: #2A1048;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation .button a {
+	color: #fff;
+	font-size: 0.8125rem;
+}
+
+.main-navigation .primary-menu-container {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: #F3EEED;
+}
+
+/* Mobile menu. */
+.menu-toggle {
+	position: relative;
+	width: 54px;
+	height: 54px;
+	background: transparent;
+	padding: 0;
+	z-index: 1;
+}
+
+.menu-toggle .icon-toggle {
+	position: absolute;
+	top: auto;
+	bottom: 13px;
+	right: 9px;
+	fill: #BB8472;
+	transition: opacity 250ms ease-in-out;
+}
+
+.menu-toggle .icon-toggle.closed {
+	opacity: 1;
+	width: 35px;
+	height: 24px;
+}
+
+.menu-toggle .icon-toggle.opened {
+	width: 26px;
+	height: 24px;
+}
+
+.menu-toggle[aria-expanded='true'] .icon-toggle.closed {
+	opacity: 0;
+}
+
+.menu-toggle[aria-expanded='true'] .icon-toggle.opened {
+	opacity: 1 !important;
+}
+
+.menu-toggle:hover {
+	background: transparent;
+}
+
+.menu-toggle:hover .icon-toggle {
+	fill: #D5B1A9;
+}
+
+.menu-toggle:active, .menu-toggle:focus {
+	outline: none;
+}
+
+.menu-toggle:active .icon-toggle, .menu-toggle:focus .icon-toggle {
+	fill: #D5B1A9;
+}
+
+.main-navigation.toggled .primary-menu-container {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 762px) {
 	.menu-toggle {
 		display: none;
 	}
+	.main-navigation .primary-menu-container {
+		display: block;
+		position: static;
+		top: auto;
+		left: auto;
+		width: auto;
+		height: auto;
+	}
 	.main-navigation ul {
 		display: flex;
+		flex-direction: row;
 	}
+	.main-navigation ul li {
+		margin-left: 10px;
+		margin-bottom: 0;
+	}
+	.main-navigation ul a {
+		font-size: 0.8125rem;
+	}
+}
+
+@media (min-width: 960px) {
+	.main-navigation ul li {
+		margin-left: 1.25rem;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	width: 90%;
+	max-width: 780px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 2rem auto 3rem;
 }
 
 .comment-navigation .nav-links,
@@ -886,18 +1031,149 @@ textarea {
 	display: none;
 }
 
+#page {
+	overflow-x: hidden;
+	position: relative;
+	margin-top: 70px;
+}
+
+.entry-header {
+	margin: 0 auto 2rem;
+}
+
+.entry-header .entry-title {
+	color: #BB8472;
+}
+
+@media (min-width: 762px) {
+	.entry-header {
+		text-align: center;
+	}
+}
+
+.entry-header,
+.post .entry-content,
+.entry-footer,
+.comments-area,
+.entry-summary {
+	width: 90%;
+	max-width: 780px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post .entry-content {
+	max-width: 715px;
+}
+
 .page-links {
 	clear: both;
 }
 
 /* Comments
 --------------------------------------------- */
+.comments-title {
+	margin-top: 3rem;
+	margin-bottom: 4rem;
+}
+
+.comment-list {
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
+	text-align: center;
+}
+
+.comment-list li > ol,
+.comment-list li > ul {
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.comment-list .comment {
+	margin-bottom: 2rem;
+}
+
+.comment-list > .comment {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border-bottom: 1px solid #D5B1A9;
+}
+
+.comment-list .comment-body {
+	margin-bottom: 2rem;
+}
+
+.comment-list .comment-meta {
+	font-size: 1rem;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
 
+.comment-edit-link {
+	font-size: 1rem;
+	font-weight: 500;
+	margin-bottom: 0.875rem;
+}
+
 .bypostauthor {
 	display: block;
+}
+
+.comment-reply-title {
+	margin-top: 3rem;
+	margin-bottom: 1.5rem;
+}
+
+.comment-form label {
+	color: #BB8472;
+}
+
+.comment-notes {
+	text-align: center;
+}
+
+.comment-form-author,
+.comment-form-email {
+	width: 100%;
+}
+
+.comment-form-author label,
+.comment-form-email label {
+	display: block;
+}
+
+.comment-form-author input,
+.comment-form-email input {
+	width: 100%;
+}
+
+@media (min-width: 762px) {
+	.comment-form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.comment-notes,
+	.comment-form-comment,
+	.comment-form-cookies-consent,
+	.form-submit {
+		width: 100%;
+		flex: 0 1 auto;
+		text-align: center;
+	}
+	.comment-form-comment {
+		text-align: left;
+	}
+	.comment-form-author,
+	.comment-form-email {
+		width: 50%;
+		width: calc(50% - 5px);
+		flex: 0 1 auto;
+	}
 }
 
 /* Widgets
@@ -1080,6 +1356,10 @@ textarea {
 	margin-right: auto;
 }
 
+.text-center {
+	text-align: center;
+}
+
 /* Blocks
 --------------------------------------------- */
 .wp-block {
@@ -1227,15 +1507,23 @@ textarea {
 	padding-top: 60%;
 	border-radius: 400px;
 	border: 1px solid #D5B1A9;
-	top: 5%;
+	top: 10%;
 	right: -5%;
 	z-index: 1;
 }
 
 @media (min-width: 762px) {
 	[class^='image__oval'] {
+		width: 85%;
+		padding-top: 55%;
+	}
+}
+
+@media (min-width: 960px) {
+	[class^='image__oval'] {
 		width: 80%;
 		padding-top: 50%;
+		top: 5%;
 	}
 }
 

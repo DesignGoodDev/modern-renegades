@@ -26,32 +26,83 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'modern-renegades' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<style>
+			.site-logo {
+				width: 72px;
+				height: 29px;
+			}
+			#mr-logo {
+				fill: url(#gradient);
+			}
+			stop {
+				transition: 250ms ease-in-out;
+			}
+			.site-logo:hover stop:first-child {
+				stop-color: #D5B1A9;
+			}
+			.site-logo:hover stop:last-child {
+				stop-color: #2A1048;
+			}
+
+
+		</style>
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
+			//the_custom_logo();
+			if ( is_front_page() || is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<svg class="site-logo" alt="<?php bloginfo( 'name' ); ?> logo">
+							<defs>
+								<linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
+									<stop stop-color="#BB8472" offset="0"/>
+									<stop stop-color="#BB8472" offset="1"/>
+								</linearGradient>
+							</defs>
+							<use xlink:href="#mr-logo"></use>
+						</svg>
+					</a>
+				</h1>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<svg class="site-logo" alt="<?php bloginfo( 'name' ); ?> logo">
+							<defs>
+								<linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
+									<stop stop-color="#BB8472" offset="0"/>
+									<stop stop-color="#BB8472" offset="1"/>
+								</linearGradient>
+							</defs>
+							<use xlink:href="#mr-logo"></use>
+						</svg>
+					</a>
+				</p>
 				<?php
 			endif;
-			$modern_renegades_description = get_bloginfo( 'description', 'display' );
-			if ( $modern_renegades_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $modern_renegades_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'modern-renegades' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-label="Toggle <?php esc_html_e( 'Primary Menu', 'modern-renegades' ); ?>" aria-expanded="false">
+
+				<svg class="icon-toggle closed">
+					<use xlink:href="#menu-toggle-closed"></use>
+				</svg>
+
+				<svg class="icon-toggle opened" style="opacity:0">
+					<use xlink:href="#menu-toggle-opened"></use>
+				</svg>
+
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+					'theme_location'  => 'menu-1',
+					'menu_id'         => 'primary-menu',
+					'container_class' => 'primary-menu-container',
 				)
 			);
 			?>

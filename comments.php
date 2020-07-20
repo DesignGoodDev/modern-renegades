@@ -26,19 +26,20 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<hr>
+		<h2 class="comments-title h4 text-center">
 			<?php
 			$modern_renegades_comment_count = get_comments_number();
 			if ( '1' === $modern_renegades_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'modern-renegades' ),
+					esc_html__( 'One comment', 'modern-renegades' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( 
+				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $modern_renegades_comment_count, 'comments title', 'modern-renegades' ) ),
+					esc_html( _nx( '%1$s comment', '%1$s comments', $modern_renegades_comment_count, 'comments title', 'modern-renegades' ) ),
 					number_format_i18n( $modern_renegades_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
@@ -53,7 +54,8 @@ if ( post_password_required() ) {
 			wp_list_comments(
 				array(
 					'style'      => 'ol',
-					'short_ping' => true,
+					'callback'   => 'modern_renegades_comments',
+					'type'       => 'comment',
 				)
 			);
 			?>
@@ -71,7 +73,13 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	comment_form(
+		array(
+			'title_reply_before'	=> '<h3 id="reply-title" class="comment-reply-title h4 text-center">',
+			'title_reply' 				=> __( 'Leave a Comment', 'modern_renegades'),
+			'title_reply_after' 	=> '</h3>',
+		)
+	);
 	?>
 
 </div><!-- #comments -->

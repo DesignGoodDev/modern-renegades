@@ -8,11 +8,9 @@ h6 {
 	margin-top: 0;
 
 	// :not(.has-text-color) & {
-	// 	color: $adobe;
+		color: $adobe;
 	// }
 }
-
-
 
 h1, .h1 {
 	font-family: $font__headings;
@@ -39,7 +37,7 @@ h3, .h3 {
 h4, .h4 {
 	font-family: $font__main;
 	font-weight: 400;
-	font-size: 1.625rem; // 14px
+	font-size: 0.875rem; // 14px
 	text-transform: uppercase;
 	letter-spacing: 0.06rem; // 0.93px
 }

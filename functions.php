@@ -21,7 +21,7 @@ include_once( get_template_directory() . '/inc/customizer.php');
 include_once( get_template_directory() . '/inc/template-functions.php');
 include_once( get_template_directory() . '/inc/template-tags.php');
 include_once( get_template_directory() . '/inc/widgets.php');
-include_once( get_template_directory() . '/inc/custom-header.php');
+// include_once( get_template_directory() . '/inc/custom-header.php');
 
 // Plugin Utilities
 include_once( get_template_directory() . '/inc/acf.php');
