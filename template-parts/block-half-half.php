@@ -1,5 +1,11 @@
 <?php
 
+$id = '';
+
+if( !empty($block['anchor']) ) {
+  $id = $block['anchor'];
+}
+
 if( have_rows( 'content' ) ): while( have_rows( 'content' ) ): the_row();
 
   if( get_row_layout() == 'image-text' ):
@@ -9,7 +15,7 @@ if( have_rows( 'content' ) ): while( have_rows( 'content' ) ): the_row();
     $text_color       = get_sub_field( 'text_color' );
     $background_color = get_sub_field( 'background_color' );
 
-    echo '<div class="half-half half-half--image-text">';
+    echo '<div id="' . $id . '" class="half-half half-half--image-text">';
 
       echo '<div class="half-half--image">';
         if( !empty( $image ) )
@@ -38,7 +44,7 @@ if( have_rows( 'content' ) ): while( have_rows( 'content' ) ): the_row();
     $text_color_right       = get_sub_field( 'text_color_right' );
     $background_color_right = get_sub_field( 'background_color_right' );
 
-    echo '<div class="half-half half-half--text-text">';
+    echo '<div id="' . $id . '" class="half-half half-half--text-text">';
     ?>
       <div
         class="half-half--content <?php echo ( !empty( $text_color_left ) ) ? 'has-color has-text-color' : '' ?>"

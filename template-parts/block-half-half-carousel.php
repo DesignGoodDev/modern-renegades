@@ -1,8 +1,14 @@
 <?php
+
 $image = get_field('image');
 $show_decoration = get_field('show_decoration');
+$id = '';
 
-echo '<div class="half-half">';
+if( !empty($block['anchor']) ) {
+  $id = $block['anchor'];
+}
+
+echo '<div id="' . $id . '" class="half-half">';
 
   echo '<div class="half-half--image">';
     if( !empty( $image ) )
