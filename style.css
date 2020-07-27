@@ -5,7 +5,7 @@ Author: DesignGood
 Author URI: https://designgood.com
 Description: Custom theme: Modern Renegades, developed by DesignGood
 GitHub Theme URI: https://github.com/DesignGoodDev/modern-renegades
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1913,6 +1913,13 @@ footer.site-footer .dg-credit span {
 	margin-right: auto;
 }
 
+.alignwide {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 780px;
+}
+
 .text-center {
 	text-align: center;
 }
@@ -2088,6 +2095,65 @@ footer.site-footer .dg-credit span {
 		width: 80%;
 		padding-top: 50%;
 		top: 5%;
+	}
+}
+
+.image__oval--bottom {
+	width: 50%;
+	height: auto;
+	padding-top: 34%;
+	border-radius: 400px;
+	border: 1px solid #BB8472;
+	top: auto;
+	bottom: -17%;
+	left: 0;
+	right: auto;
+	z-index: 1;
+}
+
+.alt-text-img {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}
+
+.alt-text-img .alt-text-img__row {
+	margin-bottom: 6rem;
+}
+
+.alt-text-img .alt-text-img__row:nth-of-type(even) .alt-text-img--image {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.alt-text-img .alt-text-img--image {
+	position: relative;
+	max-width: 300px;
+}
+
+.alt-text-img .alt-text-img--image.has-decoration {
+	margin-bottom: 6rem;
+}
+
+@media (min-width: 762px) {
+	.alt-text-img .alt-text-img__row {
+		display: flex;
+	}
+	.alt-text-img .alt-text-img__row:nth-of-type(even) .alt-text-img--image {
+		order: 2;
+		margin-right: 0;
+		margin-left: 80px;
+	}
+	.alt-text-img .alt-text-img__row:nth-of-type(even) .alt-text-img--content {
+		order: 1;
+	}
+	.alt-text-img .alt-text-img--image {
+		width: 50%;
+		flex: 0 1 50%;
+		margin-right: 80px;
+	}
+	.alt-text-img .alt-text-img--content {
+		width: 50%;
+		flex: 0 1 50%;
 	}
 }
 

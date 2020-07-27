@@ -60,5 +60,18 @@ function modern_renegades_register_blocks() {
     'supports'        => array( 'anchor' => true ),
   ));
 
+  acf_register_block_type( array(
+    'name'            => 'alt-text-img',
+    'title'           => __('Alternating Text / Image', 'modern_renegades'),
+    'render_template' => 'template-parts/block-alt-text-img.php',
+    'category'        => 'layout',
+    'icon'            => 'layout',
+    'mode'            => 'auto',
+    'keywords'        => array( 'custom', 'layout', 'split'),
+    'post_types'      => array( 'page' ),
+    'align'           => 'wide',
+    'supports'        => array( 'anchor' => true ),
+  ));
+
 }
 add_action('acf/init', 'modern_renegades_register_blocks');
