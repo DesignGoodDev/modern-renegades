@@ -122,38 +122,82 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 	 * element when on single views.
 	 */
 	function modern_renegades_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		if ( post_password_required() || is_attachment() ) {
 			return;
 		}
 
 		if ( is_singular() ) :
+
+			if ( ! has_post_thumbnail() ) {
+				return;
+			}
+
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<div class="thumb-wrap">
+					<?php the_post_thumbnail(); ?>
+				</div>
 			</div><!-- .post-thumbnail -->
 
-		<?php else : ?>
+		<?php else :
+
+			if ( ! has_post_thumbnail() ) :
+			?>
+				<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+					<div class="placeholder">
+						<div>
+							<svg><use xlink:href="#mr-logo-moth"></use></svg>
+						</div>
+					</div>
+				</a>
+			<?php return; endif; ?>
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				?>
+				<div class="thumb-wrap">
+					<?php
+						the_post_thumbnail(
+							'post-thumbnail',
+							array(
+								'alt' => the_title_attribute(
+									array(
+										'echo' => false,
+									)
+								),
+							)
+						);
+					?>
+				</div>
 			</a>
 
 			<?php
 		endif; // End is_singular().
 	}
 endif;
+
+/**
+ * Filter the_excerpt() to add a read more link
+ *
+ * If in "DRC Show Notes" Category, use "Listen" instead of "Read Post"
+ *
+ */
+function modern_renegades_excerpt_more() {
+	global $post;
+	$post_id = $post->ID;
+	if ( in_category( 'drc-show-notes' ) )
+		return '...<br><a class="read-more" href="' . get_permalink( $post_id ) . '" title="'. __('Read', 'modern_renegades') . get_the_title( $post_id ).'">'. __('Listen', 'modern_renegades') .'</a>';
+	else
+		return '...<br><a class="read-more" href="' . get_permalink( $post_id ) . '" title="'. __('Read', 'modern_renegades') . get_the_title( $post_id ).'">'. __('Read Post', 'modern_renegades') .'</a>';
+}
+add_filter( 'excerpt_more', 'modern_renegades_excerpt_more');
+
+/**
+ * Filter the maximum number of words in a post excerpt
+ */
+function modern_renegades_excerpt_length( $length ) {
+	return 24;
+}
+add_filter( 'excerpt_length', 'modern_renegades_excerpt_length', 999 );
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
@@ -165,3 +209,12 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+// Limit Search Results
+function searchfilter($query) {
+	if ($query->is_search && !is_admin() ) {
+		$query->set('post_type',array('post', 'page'));
+	}
+return $query;
+}
+add_filter('pre_get_posts','searchfilter');

@@ -24,3 +24,49 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
+
+[data-type="core/list"],
+.entry-content {
+	ul {
+		list-style: none;
+		margin-left: 0;
+		padding-left: 0;
+
+		li {
+			margin-bottom: 1rem;
+
+			&::before {
+				content: url(inc/images/icon-star-plum-small.svg);
+				margin-right: 0.5rem;
+			}
+		}
+	}
+
+	.text-center,
+	.is-style-centered {
+		li {
+			text-align: center;
+			padding-top: 1rem;
+			margin-bottom: 1.5rem;
+			position: relative;
+
+			&::before {
+				position: absolute;
+				top: -0.5rem;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				margin-right: 0;
+
+			}
+		}
+	}
+}
+
+.has-cream-color,
+.has-cream-text-color,
+.has-background-color {
+	ul li::before {
+		content: url(inc/images/icon-star-cream.svg);
+	}
+}

@@ -24,42 +24,264 @@
 	margin-top: 70px;
 }
 
+.page:not(.home),
+.blog,
+.archive,
+.search,
+.error404,
+.single-post {
+	main {
+		padding-top: 4.5rem;
+	}
+}
+
+.page-header,
 .entry-header {
 	margin: 0 auto 2rem;
 
+	.page-title,
 	.entry-title {
 		color: $adobe;
-	}
 
-	@media (min-width: $mobile) {
-		text-align: center;
+		a {
+			color: $adobe;
+			text-decoration: none;
+		}
 	}
 }
 
-.page-content {
-
+.home .entry-header {
+	display: none;
 }
 
-.entry-header,
-.post .entry-content,
+.error404 {
+	.page-content {
+		@include container-large;
+	}
+}
+
+.page-header,
+.single-post .entry-header,
+.page .entry-header,
 .entry-footer,
 .comments-area,
 .entry-summary {
-	width: 90%;
-	max-width: $content-width;
-	margin-left: auto;
-	margin-right: auto;
+	@include container;
 }
 
-.post .entry-content {
-	max-width: 715px;
+.page-header,
+.single-post .entry-header,
+.page .entry-header,
+.entry-footer,
+.entry-summary {
+	text-align: center;
 }
 
-.entry-footer {
+.page-header,
+.page .entry-header {
+	margin: 0 auto 8rem;
 
+	h1 {
+		position: relative;
+
+		&::after {
+			content: url(inc/images/icon-moon-adobe.svg);
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: -3.5rem;
+		}
+	}
+}
+
+.post-thumbnail {
+	display: block;
+	margin: 0 auto 3rem;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 50%;
+		height: auto;
+		padding-top: 84%;
+		border-radius: 400px;
+		border: 1px solid $adobe;
+		top: -4%;
+		left: 25%;
+		z-index: 1;
+	}
+
+	.thumb-wrap {
+		position: relative;
+		width: 100%;
+		padding-top: 78%;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	.placeholder {
+		width: 100%;
+		padding-top: 78%;
+		background-color: $rose;
+		position: relative;
+
+		& > div {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		svg {
+			fill: $adobe;
+			width: 225px;
+			height: 180px;
+			max-width: 100%;
+		}
+	}
+}
+
+.blog,
+.archive {
+
+	article {
+		@include container-large;
+		margin-bottom: 6rem;
+	}
+
+	.post-thumbnail {
+		max-width: 460px;
+	}
+
+	@media (min-width: $large) {
+		article {
+			.entry-header {
+				text-align: center;
+			}
+
+			&:first-of-type {
+				.entry-wrap {
+					width: 70%;
+					margin-left: auto;
+					margin-right: auto;
+					text-align: center;
+				}
+			}
+		}
+
+		article:not(:first-of-type) {
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+
+			.post-thumbnail {
+				flex: 1 1 50%;
+				width: 50%;
+
+				&::after {
+					width: 50%;
+					padding-top: 34%;
+					top: auto;
+					bottom: -22%;
+					left: 0;
+				}
+			}
+
+			.entry-wrap {
+				flex: 1 0 50%;
+				width: 50%;
+				margin-left: 2.5rem;
+				margin-right: 2.5rem;
+			}
+
+			.entry-header {
+				text-align: left;
+			}
+
+			&:nth-of-type(odd) {
+				.post-thumbnail {
+					order: 2;
+				}
+				.entry-wrap {
+					order: 1;
+				}
+			}
+		}
+
+
+	}
+}
+
+.single-post {
+
+	article {
+		@include container;
+	}
+
+	.entry-header {
+		@media (min-width: $mobile) {
+			text-align: center;
+		}
+	}
+
+	.post-thumbnail {
+		max-width: 536px;
+	}
+
+	.entry-content {
+		@include container;
+		max-width: 715px;
+	}
+
+	.entry-footer {
+
+	}
+}
+
+.share-links__wrap {
+	@include container;
+	padding: 1.5rem;
+	border-top: 1px solid $adobe;
+	border-bottom: 1px solid $adobe;
+	text-align: center;
+
+	h4 {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+	}
+
+	.share-links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	a {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+	}
+}
+
+
+
+.read-more {
+	display: inline-block;
+	margin-top: 1.5rem;
 }
 
 .page-links {
 	clear: both;
-	// margin: 0 0 1.5em;
 }

@@ -5,7 +5,8 @@ input[type="submit"],
 .button a,
 a.button,
 .wp-block-button a,
-.wp-block-button .wp-block-button__link {
+.wp-block-button .wp-block-button__link,
+.gform_footer input[type="submit"].gform_button.button {
 	background: $color__background-button;
 	border: 0;
 	border-radius: 1.5rem; // 24px
@@ -15,7 +16,8 @@ a.button,
 	line-height: 1;
 	text-transform: uppercase;
 	letter-spacing: 0.05rem; // 0.8px
-	padding: 0.9em 1.25em 0.9em;
+	padding: 1em 1.25em 0.9em;
+	font-weight: 400;
 
 	&:hover {
 		background: linear-gradient(180deg, $rose 0%, $plum 100%);

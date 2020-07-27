@@ -21,7 +21,7 @@ wp.domReady( () => {
       {
         name: 'default',
         label: 'Default',
-        isDefault: true,
+        isDefault: true
       },
       {
         name: 'underline',
@@ -36,11 +36,11 @@ wp.domReady( () => {
       {
         name: 'default',
         label: 'Default',
-        isDefault: true,
+        isDefault: true
       },
       {
-        name: 'icon',
-        label: 'Icon List',
+        name: 'centered',
+        label: 'Centered',
       }
     ]
   );

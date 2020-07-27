@@ -18,6 +18,8 @@ get_header();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
+			get_template_part( 'template-parts/share-links' );
+
 			the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'modern-renegades' ) . '</span> <span class="nav-title">%title</span>',
@@ -36,5 +38,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

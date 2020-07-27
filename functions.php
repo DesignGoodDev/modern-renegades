@@ -61,7 +61,7 @@ add_action( 'wp_enqueue_scripts', 'modern_renegades_global_enqueues' );
  */
 function modern_renegades_block_editor_enqueues() {
 
-	wp_enqueue_style( 'modern-renegades-block-editor-styles', get_template_directory_uri() . '/editor-styles.css' , array(), filemtime( get_template_directory() . '/editor-styles.css' ), 'all' );
+	// wp_enqueue_style( 'modern-renegades-block-editor-styles', get_template_directory_uri() . '/editor-styles.css' , array(), filemtime( get_template_directory() . '/editor-styles.css' ), 'all' );
 
 	wp_enqueue_script( 'modern-renegades-block-editor-scripts', get_template_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), filemtime( get_template_directory() . '/js/editor.js' ), true);
 
@@ -103,9 +103,10 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 		);
 
 		// Media
-		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 536, 418, false);
 
 		// Enable Custom Editor Styles
 		add_theme_support( 'editor-styles' );
@@ -158,7 +159,7 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 			),
 			array(
 				'name'	=> 'Text Gray',
-				'slug'	=> 'text-gray',
+				'slug'	=> 'textgray',
 				'color'	=> '#3B3835',
 			),
 			array(
@@ -171,3 +172,64 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'modern_renegades_setup' );
+
+/**
+ * Get the colors formatted for use with Iris, Automattic's color picker
+ *
+ * @link https://elod.in/adding-wordpress-color-palettes-into-the-acf-color-picker/
+ */
+function modern_renegades_output_the_colors() {
+
+	// get the colors
+		$color_palette = current( (array) get_theme_support( 'editor-color-palette' ) );
+
+	// bail if there aren't any colors found
+	if ( !$color_palette )
+		return;
+
+	// output begins
+	ob_start();
+
+	// output the names in a string
+	echo '[';
+		foreach ( $color_palette as $color ) {
+			echo "'" . $color['color'] . "', ";
+		}
+	echo ']';
+
+	return ob_get_clean();
+
+}
+
+/**
+ * Add the colors into Iris
+ *
+ * @link https://elod.in/adding-wordpress-color-palettes-into-the-acf-color-picker/
+ */
+
+function modern_renegades_register_acf_color_palette() {
+
+	$color_palette = modern_renegades_output_the_colors();
+
+	if ( !$color_palette )
+		return;
+	?>
+
+	<script type="text/javascript">
+		(function( $ ) {
+			acf.add_filter( 'color_picker_args', function( args, $field ){
+
+				// add the hexadecimal codes here for the colors you want to appear as swatches
+				args.palettes = <?php echo $color_palette; ?>
+
+				// return colors
+				return args;
+
+			});
+		})(jQuery);
+	</script>
+
+	<?php
+
+}
+add_action( 'acf/input/admin_footer', 'modern_renegades_register_acf_color_palette' );

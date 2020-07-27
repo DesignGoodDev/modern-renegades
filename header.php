@@ -44,7 +44,6 @@
 				stop-color: #2A1048;
 			}
 
-
 		</style>
 		<div class="site-branding">
 			<?php
@@ -53,7 +52,7 @@
 				?>
 				<h1 class="site-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<svg class="site-logo" alt="<?php bloginfo( 'name' ); ?> logo">
+						<svg class="site-logo" alt="<?php bloginfo( 'name' ); ?> Logo">
 							<defs>
 								<linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
 									<stop stop-color="#BB8472" offset="0"/>
@@ -69,7 +68,7 @@
 				?>
 				<p class="site-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<svg class="site-logo" alt="<?php bloginfo( 'name' ); ?> logo">
+						<svg class="site-logo" alt="<?php bloginfo( 'name' ); ?> Logo">
 							<defs>
 								<linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
 									<stop stop-color="#BB8472" offset="0"/>

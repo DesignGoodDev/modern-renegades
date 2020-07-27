@@ -6,10 +6,14 @@ h5,
 h6 {
 	clear: both;
 	margin-top: 0;
+	color: $adobe;
+}
 
-	// :not(.has-text-color) & {
-		color: $adobe;
-	// }
+.has-color,
+.has-text-color {
+	h1, h2, h3, h4, h5, h6, a {
+		color: inherit;
+	}
 }
 
 h1, .h1 {
@@ -17,6 +21,7 @@ h1, .h1 {
 	font-weight: 700;
 	font-size: 2.5rem; // 40px
 	line-height: 1.125;
+	margin-bottom: 1.25rem; // 20px
 }
 
 h2, .h2 {
@@ -24,6 +29,7 @@ h2, .h2 {
 	font-weight: 700;
 	font-size: 2.125rem; // 34px
 	line-height: 1.125;
+	margin-bottom: 1.25rem; // 20px
 }
 
 h3, .h3 {
@@ -32,6 +38,8 @@ h3, .h3 {
 	font-size: 1.625rem; // 26px
 	text-transform: uppercase;
 	letter-spacing: 0.12rem; // 1.89px
+	line-height: 1.4;
+	margin-bottom: 1.75rem; // 28px
 }
 
 h4, .h4 {
@@ -40,6 +48,8 @@ h4, .h4 {
 	font-size: 0.875rem; // 14px
 	text-transform: uppercase;
 	letter-spacing: 0.06rem; // 0.93px
+	margin-top: 1.75rem; // 28px
+	margin-bottom: 1.25rem; // 20px
 }
 
 h5, .h5 {
@@ -56,4 +66,29 @@ h6, .h6 {
 	font-size: 1.1875rem; // 19px
 	text-transform: uppercase;
 	letter-spacing: 0.08rem; // 1.27px
+}
+
+.is-style-underline {
+	display: inline-block;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1rem;
+	background-image: linear-gradient(to right, #BB847242, #BB847242);
+	background-repeat: repeat-x;
+	background-position: 0 90%;
+	background-size: 100% 30px;
+}
+
+.has-plum-background-color {
+	.is-style-underline {
+		background-image: linear-gradient(to right, #250d40b0, #250d40b0);
+	}
+}
+
+h4.is-style-underline {
+	display: inline-block;
+	font-size: 1.1875rem; // 19px
+	margin-bottom: 0.5rem;
+	background-image: linear-gradient(to right, #bb847226, #bb847226);
+	background-size: 100% 24px;
 }

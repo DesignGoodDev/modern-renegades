@@ -14,3 +14,12 @@ figure {
 	// margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
 	margin: 0;
 }
+
+.hover-opacity {
+	opacity: 1;
+	transition: opacity 250ms ease-in-out;
+
+	&:hover {
+		opacity: 0.75
+	}
+}

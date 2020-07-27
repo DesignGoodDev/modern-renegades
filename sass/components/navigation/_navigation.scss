@@ -1,8 +1,3 @@
-#wpadminbar {
-	position: absolute;
-	display: none;
-}
-
 .site-header {
 	position: fixed;
 	width: 100%;
@@ -20,7 +15,6 @@
 }
 
 .site-branding {
-	// line-height: 1;
 	z-index: 1;
 
 	.site-title {
@@ -111,12 +105,33 @@
 		}
 	}
 
-	.current_page_parent > a,
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-		color: $plum;
+	.current_page_item,
+	.current_page_parent,
+	.current-menu-item,
+	.current_page_ancestor,
+	.current-menu-ancestor {
+
+		// don't color anchor links when on that page
+		& > a:not([href*='#']) {
+			color: $plum;
+			position: relative;
+
+			&::after {
+				content: url(inc/images/icon-star-plum-small.svg);
+				position: absolute;
+				left: 0;
+				bottom: -0.5rem;
+				height: 0.75rem;
+				width: 100%;
+				text-align: center;
+			}
+
+			@media (min-width: $mobile) {
+				&::after {
+					bottom: -0.75rem;
+				}
+			}
+		}
 	}
 
 	.button a {
@@ -249,10 +264,7 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-	width: 90%;
-	max-width: $content-width;
-	margin-left: auto;
-	margin-right: auto;
+	@include container;
 
 	.site-main & {
 		margin: 2rem auto 3rem;

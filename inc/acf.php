@@ -2,19 +2,20 @@
 /**
  * Register Options Page
  */
-// function modern_renegades_register_options_page() {
+function modern_renegades_register_options_page() {
 
-//   if ( function_exists( 'acf_add_options_page' ) ) {
+  if ( function_exists( 'acf_add_options_page' ) ) {
 
-//     acf_add_options_page( array(
-//       'title'      => __( 'Site Options', 'modern_renegades' ),
-//       'capability' => 'manage_options',
-//     ) );
+    acf_add_options_page( array(
+      'title'      => __( 'Custom Site Options', 'modern_renegades' ),
+      'capability' => 'manage_options',
+      'position'   => '2.2',
+    ) );
 
-//   }
+  }
 
-// }
-// add_action('init', 'modern_renegades_register_options_page')
+}
+add_action('init', 'modern_renegades_register_options_page');
 
 /**
  * Register Blocks
@@ -38,6 +39,7 @@ function modern_renegades_register_blocks() {
     'keywords'        => array( 'custom', 'layout', 'split'),
     'post_types'      => array( 'page' ),
     'align'           => 'full',
+    'supports'        => array( 'anchor' => true ),
   ));
 
   acf_register_block_type( array(
@@ -55,6 +57,7 @@ function modern_renegades_register_blocks() {
     'keywords'        => array( 'layout', 'slideshow', 'carousel'),
     'post_types'      => array( 'page' ),
     'align'           => 'full',
+    'supports'        => array( 'anchor' => true ),
   ));
 
 }
