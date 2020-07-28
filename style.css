@@ -5,7 +5,7 @@ Author: DesignGood
 Author URI: https://designgood.com
 Description: Custom theme: Modern Renegades, developed by DesignGood
 GitHub Theme URI: https://github.com/DesignGoodDev/modern-renegades
-Version: 1.0.2
+Version: 1.0.3
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -644,7 +644,8 @@ hr {
 	background-color: #BB8472;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 
 ul,
@@ -1745,8 +1746,12 @@ footer.site-footer .dg-credit span {
 	display: block;
 }
 
+.comments-area {
+	padding-top: 4.5rem;
+	padding-bottom: 4.5rem;
+}
+
 .comment-reply-title {
-	margin-top: 3rem;
 	margin-bottom: 1.5rem;
 }
 
@@ -1987,6 +1992,11 @@ footer.site-footer .dg-credit span {
 
 .text-center {
 	text-align: center;
+}
+
+.py {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
 }
 
 /* Blocks

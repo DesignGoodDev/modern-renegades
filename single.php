@@ -20,12 +20,14 @@ get_header();
 
 			get_template_part( 'template-parts/share-links' );
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'modern-renegades' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'modern-renegades' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+			get_template_part( 'template-parts/display-posts' );
+
+			// the_post_navigation(
+			// 	array(
+			// 		'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'modern-renegades' ) . '</span> <span class="nav-title">%title</span>',
+			// 		'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'modern-renegades' ) . '</span> <span class="nav-title">%title</span>',
+			// 	)
+			// );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
