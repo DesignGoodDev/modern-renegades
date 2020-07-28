@@ -7,8 +7,12 @@ textarea {
 	color: $color__text-main;
 	font-family: $font__main;
 	font-weight: 400;
-	font-size: 1.1875rem; // 19px
+	font-size: 0.9375rem; // 15px
 	line-height: $font__line-height-body;
+
+	@media (min-width: $medium) {
+		font-size: 1.1875rem; // 19px
+	}
 }
 
 @import "headings";

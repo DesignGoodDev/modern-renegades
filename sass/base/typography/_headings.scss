@@ -19,7 +19,7 @@ h6 {
 h1, .h1 {
 	font-family: $font__headings;
 	font-weight: 700;
-	font-size: 2.5rem; // 40px
+	font-size: 2rem; // 32px
 	line-height: 1.125;
 	margin-bottom: 1.25rem; // 20px
 }
@@ -27,7 +27,7 @@ h1, .h1 {
 h2, .h2 {
 	font-family: $font__headings;
 	font-weight: 700;
-	font-size: 2.125rem; // 34px
+	font-size: 1.5625rem; // 25px
 	line-height: 1.125;
 	margin-bottom: 1.25rem; // 20px
 }
@@ -35,7 +35,7 @@ h2, .h2 {
 h3, .h3 {
 	font-family: $font__main;
 	font-weight: 400;
-	font-size: 1.625rem; // 26px
+	font-size: 1.25rem; // 20px
 	text-transform: uppercase;
 	letter-spacing: 0.12rem; // 1.89px
 	line-height: 1.4;
@@ -55,7 +55,7 @@ h4, .h4 {
 h5, .h5 {
 	font-family: $font__headings;
 	font-weight: 600;
-	font-size: 1.1875rem; // 19px
+	font-size: 0.9375rem; // 15px
 	text-transform: uppercase;
 	letter-spacing: 0.08rem; // 1.27px
 }
@@ -63,9 +63,30 @@ h5, .h5 {
 h6, .h6 {
 	font-family: $font__main;
 	font-weight: 400;
-	font-size: 1.1875rem; // 19px
+	font-size: 0.9375rem; // 15px
 	text-transform: uppercase;
 	letter-spacing: 0.08rem; // 1.27px
+}
+
+@media (min-width: $medium) {
+	h1, .h1 {
+		font-size: 2.5rem; // 40px
+	}
+	h2, .h2 {
+		font-size: 2.125rem; // 34px
+	}
+	h3, .h3 {
+		font-size: 1.625rem; // 26px
+	}
+	// h4, .h4 {
+	// 	font-size: 0.875rem; // 14px
+	// }
+	h5, .h5 {
+		font-size: 1.1875rem; // 19px
+	}
+	h6, .h6 {
+		font-size: 1.1875rem; // 19px
+	}
 }
 
 .is-style-underline {
@@ -87,8 +108,39 @@ h6, .h6 {
 
 h4.is-style-underline {
 	display: inline-block;
-	font-size: 1.1875rem; // 19px
 	margin-bottom: 0.5rem;
 	background-image: linear-gradient(to right, #bb847226, #bb847226);
 	background-size: 100% 24px;
+	padding-bottom: 0.75rem;
+
+	@media (min-width: $small) {
+		display: block;
+	}
+
+	@media (min-width: $large) {
+		font-size: 1.1875rem; // 19px
+	}
+}
+
+.arrow-right {
+
+	&::after {
+		content: url(inc/images/icon-arrow-down.svg);
+		position: relative;
+		display: block;
+		top: -1rem;
+	}
+
+	@media (min-width: 600px) {
+		position: relative;
+
+
+		&::after {
+			content: url(inc/images/icon-arrow-right.svg);
+			position: absolute;
+			right: -1.5rem;
+			top: auto;
+			bottom: 1.125rem;
+		}
+	}
 }

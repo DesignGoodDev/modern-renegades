@@ -106,4 +106,9 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+
+		<a class="back-to-top" href="#page">
+			<img src="<?php echo get_template_directory_uri(); ?>/inc/images/back-to-top-stars.svg" alt="stars decoration">
+			<div><?php echo esc_html_e( 'Back to Top', 'modern-renegades') ?></div>
+		</a>
 	</header><!-- #masthead -->

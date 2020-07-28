@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="36px" viewBox="0 0 9 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-arrow-down</title>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Homepage" transform="translate(-156.000000, -3688.000000)" stroke="#BB8472">
+            <g id="Group" transform="translate(90.000000, 3550.000000)">
+                <g id="icon-arrow-down" transform="translate(70.500000, 155.500000) rotate(-270.000000) translate(-70.500000, -155.500000) translate(53.000000, 151.000000)">
+                    <line x1="0.5" y1="4.5" x2="34" y2="4.5" id="Line-3" stroke-linecap="square"></line>
+                    <polyline id="Rectangle" transform="translate(31.000000, 4.500000) rotate(45.000000) translate(-31.000000, -4.500000) " points="28.5 2 33.5 2 33.5 7"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

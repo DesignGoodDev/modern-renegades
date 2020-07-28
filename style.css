@@ -5,7 +5,7 @@ Author: DesignGood
 Author URI: https://designgood.com
 Description: Custom theme: Modern Renegades, developed by DesignGood
 GitHub Theme URI: https://github.com/DesignGoodDev/modern-renegades
-Version: 1.0.3
+Version: 1.0.4
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -50,10 +50,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Blocks
 
 --------------------------------------------------------------*/
-@import url("https://use.typekit.net/lls0cqm.css");
-@use "sass:color";
 /* Color Utility Classes
 --------------------------------------------- */
+@import url("https://use.typekit.net/lls0cqm.css");
 .has-white-color {
 	color: #fff;
 }
@@ -452,8 +451,19 @@ textarea {
 	color: #3B3835;
 	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	font-weight: 400;
-	font-size: 1.1875rem;
+	font-size: 0.9375rem;
 	line-height: 1.5;
+}
+
+@media (min-width: 762px) {
+	body,
+	button,
+	input,
+	select,
+	optgroup,
+	textarea {
+		font-size: 1.1875rem;
+	}
 }
 
 h1,
@@ -481,7 +491,7 @@ h6 {
 h1, .h1 {
 	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	font-weight: 700;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	line-height: 1.125;
 	margin-bottom: 1.25rem;
 }
@@ -489,7 +499,7 @@ h1, .h1 {
 h2, .h2 {
 	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	font-weight: 700;
-	font-size: 2.125rem;
+	font-size: 1.5625rem;
 	line-height: 1.125;
 	margin-bottom: 1.25rem;
 }
@@ -497,7 +507,7 @@ h2, .h2 {
 h3, .h3 {
 	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	font-weight: 400;
-	font-size: 1.625rem;
+	font-size: 1.25rem;
 	text-transform: uppercase;
 	letter-spacing: 0.12rem;
 	line-height: 1.4;
@@ -517,7 +527,7 @@ h4, .h4 {
 h5, .h5 {
 	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	font-weight: 600;
-	font-size: 1.1875rem;
+	font-size: 0.9375rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08rem;
 }
@@ -525,9 +535,27 @@ h5, .h5 {
 h6, .h6 {
 	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	font-weight: 400;
-	font-size: 1.1875rem;
+	font-size: 0.9375rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08rem;
+}
+
+@media (min-width: 762px) {
+	h1, .h1 {
+		font-size: 2.5rem;
+	}
+	h2, .h2 {
+		font-size: 2.125rem;
+	}
+	h3, .h3 {
+		font-size: 1.625rem;
+	}
+	h5, .h5 {
+		font-size: 1.1875rem;
+	}
+	h6, .h6 {
+		font-size: 1.1875rem;
+	}
 }
 
 .is-style-underline {
@@ -547,10 +575,42 @@ h6, .h6 {
 
 h4.is-style-underline {
 	display: inline-block;
-	font-size: 1.1875rem;
 	margin-bottom: 0.5rem;
 	background-image: linear-gradient(to right, #bb847226, #bb847226);
 	background-size: 100% 24px;
+	padding-bottom: 0.75rem;
+}
+
+@media (min-width: 600px) {
+	h4.is-style-underline {
+		display: block;
+	}
+}
+
+@media (min-width: 960px) {
+	h4.is-style-underline {
+		font-size: 1.1875rem;
+	}
+}
+
+.arrow-right::after {
+	content: url(inc/images/icon-arrow-down.svg);
+	position: relative;
+	display: block;
+	top: -1rem;
+}
+
+@media (min-width: 600px) {
+	.arrow-right {
+		position: relative;
+	}
+	.arrow-right::after {
+		content: url(inc/images/icon-arrow-right.svg);
+		position: absolute;
+		right: -1.5rem;
+		top: auto;
+		bottom: 1.125rem;
+	}
 }
 
 p {
@@ -995,6 +1055,51 @@ label {
 
 .site-branding h1, .site-branding p {
 	margin-bottom: 0;
+}
+
+.back-to-top {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	width: 63px;
+	height: 104px;
+	border-radius: 40px;
+	background-color: #ECE1DF;
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-size: 0.75rem;
+	color: #BB8472;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	line-height: 0.9375rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	z-index: -1;
+}
+
+.back-to-top img {
+	margin-bottom: 0.5rem;
+}
+
+.back-to-top::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 40px;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	background-image: linear-gradient(to bottom, #D5B1A9 0%, #ECE1DF 90%);
+	transition: opacity 250ms ease-in-out;
+	z-index: -1;
+}
+
+.back-to-top:hover::after {
+	opacity: 1;
 }
 
 .main-navigation {
