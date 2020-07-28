@@ -1137,6 +1137,7 @@ footer.site-footer .dg-credit span {
 	margin-right: auto;
 	max-width: 780px;
 	max-width: 715px;
+	padding-bottom: 4rem;
 }
 
 .share-links__wrap {
@@ -1173,6 +1174,70 @@ footer.site-footer .dg-credit span {
 
 .page-links {
 	clear: both;
+}
+
+.display-posts-listing .listing-item {
+	max-width: 300px;
+	margin-bottom: 3rem;
+}
+
+.display-posts-listing .image,
+.display-posts-listing .title,
+.display-posts-listing .excerpt {
+	display: block;
+}
+
+.display-posts-listing .excerpt-dash {
+	display: none;
+}
+
+.display-posts-listing .title {
+	color: #BB8472;
+	font-family: angie-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	font-size: 1.3125rem;
+	letter-spacing: 0.0875;
+	text-decoration: none;
+}
+
+.display-posts-listing .image {
+	position: relative;
+	width: 100%;
+	padding-top: 78%;
+	margin-bottom: 1.5rem;
+}
+
+.display-posts-listing .image::after {
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: auto;
+	padding-top: 84%;
+	border-radius: 400px;
+	border: 1px solid #BB8472;
+	top: -4%;
+	left: 25%;
+	z-index: 1;
+}
+
+.display-posts-listing .image img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media (min-width: 762px) {
+	.display-posts-listing {
+		display: flex;
+	}
+	.display-posts-listing .listing-item {
+		max-width: none;
+		flex: 1 1 33.333%;
+		padding: 0 1rem;
+	}
 }
 
 /* Comments

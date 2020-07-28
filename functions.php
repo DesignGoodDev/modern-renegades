@@ -89,8 +89,8 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 				'comment-list',
 				'gallery',
 				'caption',
-				// 'style',
-				// 'script',
+				'style',
+				'script',
 			)
 		);
 
@@ -113,25 +113,27 @@ if ( ! function_exists( 'modern_renegades_setup' ) ) :
 		add_editor_style( 'editor-styles.css' );
 
 		// Disable Custom Font Sizes
-		add_theme_support('disable-custom-font-sizes');
+		add_theme_support( 'disable-custom-font-sizes' );
 
 		// Enable Specific Custom Font Sizes
 		// TODO: remove line height option
 		// TODO: only display this for paragraphs, not headings
-		add_theme_support( 'editor-font-sizes', array(
+		add_theme_support( 'editor-font-sizes',
 			array(
-				'name'      => __( 'Large', 'modern-renegades' ),
-				'shortName' => __( 'L', 'modern-renegades' ),
-				'size'      => 23,
-				'slug'      => 'large'
-			),
-		) );
+				array(
+					'name'      => __( 'Large', 'modern-renegades' ),
+					'shortName' => __( 'L', 'modern-renegades' ),
+					'size'      => 23,
+					'slug'      => 'large'
+				),
+			)
+		);
 
 		// Disable Custom Colors
-		add_theme_support('disable-custom-colors');
+		add_theme_support( 'disable-custom-colors' );
 
 		// Add Specific Custom Color Palette
-		add_theme_support('editor-color-palette', array(
+		add_theme_support( 'editor-color-palette', array(
 			array(
 				'name'	=> 'Cream',
 				'slug'	=> 'cream',

@@ -244,6 +244,7 @@
 	.entry-content {
 		@include container;
 		max-width: 715px;
+		padding-bottom: 4rem;
 	}
 
 	.entry-footer {
@@ -275,8 +276,6 @@
 	}
 }
 
-
-
 .read-more {
 	display: inline-block;
 	margin-top: 1.5rem;
@@ -284,4 +283,71 @@
 
 .page-links {
 	clear: both;
+}
+
+.display-posts-listing {
+
+	.listing-item {
+		max-width: 300px;
+		margin-bottom: 3rem;
+	}
+
+	.image,
+	.title,
+	.excerpt {
+		display: block;
+	}
+
+	.excerpt-dash {
+		display: none;
+	}
+
+	.title {
+		color: $adobe;
+		font-family: $font__headings;
+		font-size: 1.3125rem;// 21px
+		letter-spacing: 0.0875; // 1.4px
+		text-decoration: none;
+	}
+
+	.image {
+		position: relative;
+		width: 100%;
+		padding-top: 78%;
+		margin-bottom: 1.5rem;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 50%;
+			height: auto;
+			padding-top: 84%;
+			border-radius: 400px;
+			border: 1px solid $adobe;
+			top: -4%;
+			left: 25%;
+			z-index: 1;
+		}
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	@media (min-width: $mobile) {
+
+		display: flex;
+
+		.listing-item {
+			max-width: none;
+			flex: 1 1 33.333%;
+			padding: 0 1rem;
+		}
+	}
 }

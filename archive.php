@@ -16,8 +16,13 @@ get_header();
 
 			<header class="page-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+				// temporary fix until decision made re: podcast CPT vs blog category
+				if ( is_category( 'journal' ) ) :
+					echo '<h1 class="page-title">Modern Renegades Blog</h1>';
+				else :
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="archive-description">', '</div>' );
+				endif;
 				?>
 			</header><!-- .page-header -->
 
