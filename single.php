@@ -20,8 +20,6 @@ get_header();
 
 			get_template_part( 'template-parts/share-links' );
 
-			get_template_part( 'template-parts/display-posts' );
-
 			// the_post_navigation(
 			// 	array(
 			// 		'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'modern-renegades' ) . '</span> <span class="nav-title">%title</span>',
@@ -33,6 +31,8 @@ get_header();
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
+
+			get_template_part( 'template-parts/display-posts' );
 
 		endwhile; // End of the loop.
 		?>
