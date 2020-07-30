@@ -111,6 +111,9 @@
     }
 
     &.half-half--text-text {
+      height: auto;
+      max-height: 90vh;
+
       .half-half--content {
         justify-content: flex-start;
       }

@@ -1707,6 +1707,10 @@ footer.site-footer .dg-credit span {
 		justify-content: center;
 		align-items: stretch;
 	}
+	.half-half.half-half--text-text {
+		height: auto;
+		max-height: 90vh;
+	}
 	.half-half.half-half--text-text .half-half--content {
 		justify-content: flex-start;
 	}
