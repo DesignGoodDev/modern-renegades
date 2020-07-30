@@ -14,6 +14,7 @@ a.button,
 	cursor: pointer;
 	font-size: 0.8125rem; // 13px
 	line-height: 1;
+	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.05rem; // 0.8px
 	padding: 1em 1.25em 0.9em;
@@ -26,5 +27,23 @@ a.button,
 	&:active,
 	&:focus {
 		outline: 2px auto $adobe;
+	}
+}
+
+.has-plum-background-color {
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	.button a,
+	a.button,
+	.wp-block-button a,
+	.wp-block-button .wp-block-button__link,
+	.gform_footer input[type="submit"].gform_button.button {
+		background: $adobe;
+
+		&:hover {
+			background: linear-gradient(180deg, $rose 0%, $adobe 100%);
+		}
 	}
 }

@@ -26,7 +26,7 @@
 .wp-block-group.alignwide > .wp-block-group__inner-container {
 	@include container;
 
-	@media (min-width: $mobile) {
+	@media (min-width: $medium) {
 		width: 90%;
 	}
 }
@@ -36,7 +36,7 @@
 	max-width: none;
 	margin: 0;
 
-	@media (min-width: $mobile) {
+	@media (min-width: $medium) {
 		width: 100%;
 	}
 }
@@ -80,12 +80,13 @@
     padding: 60px 5%;
   }
 
-  @media (min-width: $mobile) {
+  @media (min-width: $medium) {
     display: flex;
     align-items: stretch;
     justify-content: stretch;
 
-    max-height: 90vh;
+    height: 90vh;
+    max-height: 760px;
 
     &--image,
     &--content {
@@ -139,7 +140,7 @@
 }
 
 .image--cover {
-  @media (min-width: $mobile) {
+  @media (min-width: $medium) {
     // position: absolute;
     width: 100%;
     height: 100%;
@@ -161,7 +162,7 @@
   right: -5%;
   z-index: 1;
 
-  @media (min-width: $mobile) {
+  @media (min-width: $medium) {
     width: 85%;
     padding-top: 55%;
   }
@@ -180,15 +181,19 @@
   border-radius: 400px;
   border: 1px solid $adobe;
   top: auto;
-  bottom: -17%;
+  bottom: -15%;
   left: 0;
   right: auto;
   z-index: 1;
 }
 
 .alt-text-img {
-  padding-top: 6rem; // 96px;
-  padding-bottom: 6rem;
+  padding-top: 6rem; // 96px
+  padding-bottom: 3rem; // 48px
+
+  h4 {
+    margin-top: 0;
+  }
 
   .alt-text-img__row {
     margin-bottom: 6rem;
@@ -210,10 +215,12 @@
     }
   }
 
-  @media (min-width: $mobile) {
+  @media (min-width: $medium) {
 
     .alt-text-img__row {
       display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
 
       &:nth-of-type(even) {
 
@@ -233,6 +240,11 @@
       width: 50%;
       flex: 0 1 50%;
       margin-right: 80px;
+      max-width: none;
+
+      &.has-decoration {
+        margin-bottom: 4rem;
+      }
     }
 
     .alt-text-img--content {

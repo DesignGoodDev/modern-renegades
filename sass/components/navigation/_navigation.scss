@@ -86,6 +86,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -130,6 +131,7 @@
 
 	li {
 		position: relative;
+		line-height: 1.125;
 		margin-bottom: 20px;
 
 		&:hover > a,
@@ -180,9 +182,11 @@
 		}
 	}
 
-	.button a {
-		color: $white;
-		font-size: 0.8125rem; //13px;
+	.button {
+		a {
+			color: $white;
+			font-size: 0.8125rem; //13px;
+		}
 	}
 }
 
@@ -292,6 +296,10 @@
 
 			a {
 				font-size: 0.8125rem; // 13px
+			}
+
+			.button {
+				flex: 1 0 auto;
 			}
 		}
 	}
