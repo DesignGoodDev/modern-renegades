@@ -2,6 +2,9 @@
 
 $image = get_field('image');
 $show_decoration = get_field('show_decoration');
+$heading = get_field('heading');
+$text_color = get_field('quote_text_color');
+$background_color = get_field('quote_background_color');
 $id = '';
 
 if( !empty($block['anchor']) ) {
@@ -18,8 +21,14 @@ echo '<div id="' . $id . '" class="half-half">';
         echo '<span class="image__oval"></span>';
 
   echo '</div>';
+  ?>
 
-  echo '<div class="half-half--content has-plum-background-color has-cream-color has-background-color has-color">';
+  <div class="half-half--content" style="<?php echo ( !empty( $text_color ) ) ? 'color: ' . $text_color . '; ' : 'color: #F3EEED;'; ?> <?php echo ( !empty( $background_color ) ) ? 'background-color: ' . $background_color . ';' : 'background-color: #2A1048;'; ?>">
+
+  <?php if( !empty( $heading ) ): ?>
+      <h4 <?php echo ( !empty( $text_color ) ) ? ' style="color: ' . $text_color . ';"' : ' style="color: #F3EEED;"' ?>><?php echo $heading ?></h4>
+  <?php
+    endif;
 
     $count = 0;
     if( have_rows('quote') ):

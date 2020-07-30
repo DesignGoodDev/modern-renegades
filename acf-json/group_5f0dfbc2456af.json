@@ -46,6 +46,25 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_5f233717b504d",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5f0f26defdf92",
             "label": "Quotes",
             "name": "quote",
@@ -103,6 +122,36 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5f23004c9d1a3",
+            "label": "Quote Text Color",
+            "name": "quote_text_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5f2300329d1a2",
+            "label": "Quote Background Color",
+            "name": "quote_background_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
         }
     ],
     "location": [
@@ -122,5 +171,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1594828799
+    "modified": 1596143398
 }

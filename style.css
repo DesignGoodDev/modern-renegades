@@ -5,7 +5,7 @@ Author: DesignGood
 Author URI: https://designgood.com
 Description: Custom theme: Modern Renegades, developed by DesignGood
 GitHub Theme URI: https://github.com/DesignGoodDev/modern-renegades
-Version: 1.0.4
+Version: 1.0.5
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -848,6 +848,7 @@ a.button,
 	cursor: pointer;
 	font-size: 0.8125rem;
 	line-height: 1;
+	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.05rem;
 	padding: 1em 1.25em 0.9em;
@@ -884,6 +885,30 @@ a.button:focus,
 .gform_footer input[type="submit"].gform_button.button:active,
 .gform_footer input[type="submit"].gform_button.button:focus {
 	outline: 2px auto #BB8472;
+}
+
+.has-plum-background-color button,
+.has-plum-background-color input[type="button"],
+.has-plum-background-color input[type="reset"],
+.has-plum-background-color input[type="submit"],
+.has-plum-background-color .button a,
+.has-plum-background-color a.button,
+.has-plum-background-color .wp-block-button a,
+.has-plum-background-color .wp-block-button .wp-block-button__link,
+.has-plum-background-color .gform_footer input[type="submit"].gform_button.button {
+	background: #BB8472;
+}
+
+.has-plum-background-color button:hover,
+.has-plum-background-color input[type="button"]:hover,
+.has-plum-background-color input[type="reset"]:hover,
+.has-plum-background-color input[type="submit"]:hover,
+.has-plum-background-color .button a:hover,
+.has-plum-background-color a.button:hover,
+.has-plum-background-color .wp-block-button a:hover,
+.has-plum-background-color .wp-block-button .wp-block-button__link:hover,
+.has-plum-background-color .gform_footer input[type="submit"].gform_button.button:hover {
+	background: linear-gradient(180deg, #D5B1A9 0%, #BB8472 100%);
 }
 
 input[type="text"],
@@ -1115,6 +1140,7 @@ label {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 .main-navigation ul ul {
@@ -1148,6 +1174,7 @@ label {
 
 .main-navigation li {
 	position: relative;
+	line-height: 1.125;
 	margin-bottom: 20px;
 }
 
@@ -1188,7 +1215,7 @@ label {
 	text-align: center;
 }
 
-@media (min-width: 762px) {
+@media (min-width: 960px) {
 	.main-navigation .current_page_item > a:not([href*='#'])::after,
 	.main-navigation .current_page_parent > a:not([href*='#'])::after,
 	.main-navigation .current-menu-item > a:not([href*='#'])::after,
@@ -1271,7 +1298,7 @@ label {
 	display: block;
 }
 
-@media screen and (min-width: 762px) {
+@media screen and (min-width: 960px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -1293,6 +1320,9 @@ label {
 	}
 	.main-navigation ul a {
 		font-size: 0.8125rem;
+	}
+	.main-navigation ul .button {
+		flex: 1 0 auto;
 	}
 }
 
@@ -2127,7 +2157,7 @@ footer.site-footer .dg-credit span {
 	max-width: 680px;
 }
 
-@media (min-width: 762px) {
+@media (min-width: 960px) {
 	.wp-block-group:not(.alignfull) > .wp-block-group__inner-container,
 	.wp-block-group:not(.alignwide) > .wp-block-group__inner-container {
 		width: 80%;
@@ -2201,7 +2231,8 @@ footer.site-footer .dg-credit span {
 		display: flex;
 		align-items: stretch;
 		justify-content: stretch;
-		max-height: 90vh;
+		height: 90vh;
+		max-height: 760px;
 	}
 	.half-half--image, .half-half--content {
 		flex: 1 0 50%;
@@ -2221,9 +2252,15 @@ footer.site-footer .dg-credit span {
 	}
 }
 
+.half-half h4 {
+	flex: 1 1 auto;
+	justify-self: flex-start;
+}
+
 .half-half .swiper-container {
 	max-width: 100%;
 	padding-bottom: 4rem;
+	flex: 1 1 auto;
 }
 
 .half-half .swiper-pagination-bullet {
@@ -2285,7 +2322,7 @@ footer.site-footer .dg-credit span {
 	border-radius: 400px;
 	border: 1px solid #BB8472;
 	top: auto;
-	bottom: -17%;
+	bottom: -15%;
 	left: 0;
 	right: auto;
 	z-index: 1;
@@ -2293,7 +2330,11 @@ footer.site-footer .dg-credit span {
 
 .alt-text-img {
 	padding-top: 6rem;
-	padding-bottom: 6rem;
+	padding-bottom: 3rem;
+}
+
+.alt-text-img h4 {
+	margin-top: 0;
 }
 
 .alt-text-img .alt-text-img__row {
@@ -2317,6 +2358,8 @@ footer.site-footer .dg-credit span {
 @media (min-width: 762px) {
 	.alt-text-img .alt-text-img__row {
 		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
 	}
 	.alt-text-img .alt-text-img__row:nth-of-type(even) .alt-text-img--image {
 		order: 2;
@@ -2330,6 +2373,10 @@ footer.site-footer .dg-credit span {
 		width: 50%;
 		flex: 0 1 50%;
 		margin-right: 80px;
+		max-width: none;
+	}
+	.alt-text-img .alt-text-img--image.has-decoration {
+		margin-bottom: 4rem;
 	}
 	.alt-text-img .alt-text-img--content {
 		width: 50%;
