@@ -18,6 +18,8 @@ get_header();
 				<h1 class="page-title">Modern Renegades Podcast</h1>
 			</header><!-- .page-header -->
 
+			<div class="episode-grid">
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -32,6 +34,8 @@ get_header();
 
 			endwhile;
 
+			echo '</div>';
+
 			the_posts_navigation();
 
 		else :
@@ -44,5 +48,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

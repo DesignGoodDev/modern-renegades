@@ -129,10 +129,24 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 
 			if ( ! has_post_thumbnail() ) {
-				return;
-			}
 
-		?>
+				if ( 'page' === get_post_type() ) {
+					return;
+				}
+
+			?>
+
+				<div class="post-thumbnail">
+					<div class="placeholder">
+						<div>
+							<svg><use xlink:href="#mr-logo-moth"></use></svg>
+						</div>
+					</div>
+				</div>
+
+				<?php
+				}
+			?>
 
 			<div class="post-thumbnail">
 				<div class="thumb-wrap">
@@ -143,12 +157,18 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 					endif;
 					?>
 				</div>
-			</div><!-- .post-thumbnail -->
+			</div>
 
 		<?php else :
 
 			if ( ! has_post_thumbnail() ) :
+
+				if ( 'page' === get_post_type() ) {
+					return;
+				}
+
 			?>
+
 				<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 					<div class="placeholder">
 						<div>
@@ -156,6 +176,7 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 						</div>
 					</div>
 				</a>
+
 			<?php return; endif; ?>
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">

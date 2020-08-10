@@ -5,7 +5,7 @@ Author: DesignGood
 Author URI: https://designgood.com
 Description: Custom theme: Modern Renegades, developed by DesignGood
 GitHub Theme URI: https://github.com/DesignGoodDev/modern-renegades
-Version: 1.0.7
+Version: 1.0.8
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1538,6 +1538,34 @@ footer.site-footer .dg-credit span {
 	max-width: 960px;
 }
 
+.search .page-container {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 960px;
+}
+
+.search .page-container * {
+	text-align: left !important;
+}
+
+.search .page-container .post-thumbnail {
+	display: none;
+}
+
+.search .page-container article {
+	padding: 3rem 1.5rem;
+	border-bottom: 1px solid #BB8472;
+}
+
+.search .page-container .entry-header {
+	margin: 0;
+}
+
+.search .page-container .entry-meta {
+	margin-bottom: 1.5rem;
+}
+
 .page-header,
 .single-episode .entry-header,
 .single-post .entry-header,
@@ -1705,6 +1733,76 @@ footer.site-footer .dg-credit span {
 	}
 }
 
+.episode .post-thumbnail .thumb-wrap {
+	padding-top: 100%;
+}
+
+.episode .post-thumbnail::after {
+	width: 24%;
+	padding-top: 36%;
+	top: 0;
+	left: auto;
+	right: -12%;
+}
+
+.episode .placeholder {
+	padding-top: 100%;
+}
+
+.post-type-archive-episode .post-thumbnail::before {
+	content: url(inc/images/icon-play.svg);
+	width: 50px;
+	height: 50px;
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: -25px;
+	z-index: 1;
+}
+
+@media (min-width: 960px) {
+	.post-type-archive-episode .episode-grid {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 960px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+	.post-type-archive-episode article {
+		display: block;
+	}
+	.post-type-archive-episode article:first-of-type {
+		flex: 1 0 100%;
+	}
+	.post-type-archive-episode article:not(:first-of-type) {
+		flex: 0 1 33.333%;
+		display: block;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin: 0 0 3rem;
+	}
+	.post-type-archive-episode article:not(:first-of-type) .post-thumbnail {
+		width: 100%;
+	}
+	.post-type-archive-episode article:not(:first-of-type) .post-thumbnail::after {
+		display: none;
+	}
+	.post-type-archive-episode article:not(:first-of-type) .entry-wrap {
+		margin: 0;
+		width: 100%;
+	}
+	.post-type-archive-episode article:not(:first-of-type) .entry-title {
+		font-size: 1.3125rem;
+		letter-spacing: 0.0875rem;
+	}
+	.post-type-archive-episode article:not(:first-of-type) .entry-content {
+		display: none;
+	}
+}
+
 .single-episode article,
 .single-post article {
 	width: 90%;
@@ -1735,6 +1833,11 @@ footer.site-footer .dg-credit span {
 	padding-bottom: 4rem;
 }
 
+.single-episode .entry-content h3,
+.single-post .entry-content h3 {
+	margin-top: 3rem;
+}
+
 .share-links__wrap {
 	width: 90%;
 	margin-left: auto;
@@ -1759,6 +1862,16 @@ footer.site-footer .dg-credit span {
 .share-links__wrap a {
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
+}
+
+.subscribe-links__wrap {
+	border-top: 0;
+	padding: 6rem 1.5rem;
+}
+
+.subscribe-links__wrap h4 {
+	text-transform: none;
+	margin-bottom: 3.125rem;
 }
 
 .read-more {
@@ -1832,6 +1945,25 @@ footer.site-footer .dg-credit span {
 		flex: 1 1 33.333%;
 		padding: 0 1rem;
 	}
+}
+
+.display-episodes .image {
+	padding-top: 100%;
+}
+
+.display-episodes .image::before {
+	content: url(inc/images/icon-play.svg);
+	width: 50px;
+	height: 50px;
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: -25px;
+	z-index: 1;
+}
+
+.display-episodes .image::after {
+	display: none;
 }
 
 .player {

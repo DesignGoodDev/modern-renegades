@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="episode-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php modern_renegades_post_thumbnail(); ?>
 
@@ -25,7 +25,7 @@
 				the_title( '<h1 class="entry-title h2">', '</h1>' );
       else :
         if ( ! empty( $ep_number ) ):
-          echo '<h4>Episode #' . $ep_number . '</h4>';
+          echo '<h4>Episode #' . $ep_number . ':</h4>';
         endif;
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
       endif;
@@ -65,7 +65,10 @@
 		<footer class="entry-footer">
       <?php
       if ( is_singular() ) :
-        echo do_shortcode( '[fusebox_transcript]' );
+        $display_transcript = get_field('display_transcript');
+        if ( ! empty( $display_transcript ) ):
+          echo do_shortcode( '[fusebox_transcript]' );
+        endif;
       endif;
       ?>
 		</footer><!-- .entry-footer -->

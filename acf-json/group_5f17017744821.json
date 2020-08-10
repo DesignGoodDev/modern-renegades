@@ -50,6 +50,71 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_5f31b9372ac2f",
+            "label": "Podcast Subscription Links",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Please contact DesignGood if you would like to add subscription links. To remove an icon\/link, simply leave its URL field blank below.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5f31b9842ac30",
+            "label": "Apple Podcasts URL",
+            "name": "apple_podcasts_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f31b9922ac31",
+            "label": "Stitcher URL",
+            "name": "stitcher_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f31b99b2ac32",
+            "label": "Spotify URL",
+            "name": "spotify_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -69,5 +134,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1595343550
+    "modified": 1597094315
 }

@@ -21,7 +21,7 @@ get_header();
 			if ( 'post' === get_post_type() ) :
 				get_template_part( 'template-parts/share-links' );
 			elseif ( 'episode' === get_post_type() ) :
-				get_template_part( 'template-parts/share-links' );
+				get_template_part( 'template-parts/subscribe-links' );
 			endif;
 
 			if ( comments_open() || get_comments_number() ) :

@@ -36,6 +36,8 @@
 	}
 }
 
+
+
 .page-header,
 .entry-header {
 	margin: 0 auto 2rem;
@@ -55,9 +57,32 @@
 	display: none;
 }
 
+
 .error404 {
 	.page-content {
 		@include container-large;
+	}
+}
+
+.search {
+	.page-container {
+		@include container-large;
+		* {
+			text-align: left !important;
+		}
+		.post-thumbnail {
+			display: none;
+		}
+		article {
+			padding: 3rem 1.5rem;
+			border-bottom: 1px solid $adobe;
+		}
+		.entry-header {
+			margin: 0;
+		}
+		.entry-meta {
+			margin-bottom: 1.5rem;
+		}
 	}
 }
 
@@ -157,7 +182,7 @@
 	}
 }
 
-// re-work for Episodes
+
 .blog,
 .archive {
 
@@ -224,12 +249,93 @@
 				}
 			}
 		}
+	}
+}
 
+.episode {
+	.post-thumbnail {
+		.thumb-wrap {
+			padding-top: 100%;
+		}
 
+		&::after {
+			width: 24%;
+			padding-top: 36%;
+			top: 0;
+			left: auto;
+			right: -12%;
+		}
 	}
 
-	&.post-type-archive-episode {
+	.placeholder {
+		padding-top: 100%;
+	}
+}
 
+
+.post-type-archive-episode {
+	.post-thumbnail {
+
+		// play button
+		&::before {
+			content: url(inc/images/icon-play.svg);
+			width: 50px;
+			height: 50px;
+			display: block;
+			position: absolute;
+			right: 0;
+			bottom: -25px;
+			z-index: 1;
+		}
+
+	}
+	@media (min-width: $large) {
+		.episode-grid {
+			@include container-large;
+
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+
+		article {
+			display: block;
+		}
+
+		article:first-of-type {
+			flex: 1 0 100%;
+		}
+
+		article:not(:first-of-type) {
+			flex: 0 1 33.333%;
+			display: block;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin: 0 0 3rem;
+
+			.post-thumbnail {
+				width: 100%;
+
+				&::after {
+					display: none;
+				}
+			}
+
+			.entry-wrap {
+				margin: 0;
+				width: 100%;
+			}
+
+			.entry-title {
+				font-size: 1.3125rem; // 21px
+				letter-spacing: 0.0875rem; // 1.4px
+			}
+
+			.entry-content {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -254,10 +360,10 @@
 		@include container;
 		max-width: 715px;
 		padding-bottom: 4rem;
-	}
 
-	.entry-footer {
-
+		h3 {
+			margin-top: 3rem;
+		}
 	}
 }
 
@@ -281,6 +387,16 @@
 	a {
 		margin-left: 0.5rem;
 		margin-right: 0.5rem;
+	}
+}
+
+.subscribe-links__wrap {
+	border-top: 0;
+	padding: 6rem 1.5rem;
+
+	h4 {
+		text-transform: none;
+		margin-bottom: 3.125rem;
 	}
 }
 
@@ -356,6 +472,27 @@
 			max-width: none;
 			flex: 1 1 33.333%;
 			padding: 0 1rem;
+		}
+	}
+}
+
+.display-episodes {
+	.image {
+		padding-top: 100%;
+
+		&::before {
+			content: url(inc/images/icon-play.svg);
+			width: 50px;
+			height: 50px;
+			display: block;
+			position: absolute;
+			right: 0;
+			bottom: -25px;
+			z-index: 1;
+		}
+
+		&::after {
+			display: none;
 		}
 	}
 }

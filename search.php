@@ -23,6 +23,8 @@ get_header();
 				</h1>
 			</header><!-- .page-header -->
 
+			<div class="page-container">
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -36,6 +38,8 @@ get_header();
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
+
+			echo '</div>';
 
 			the_posts_navigation();
 
