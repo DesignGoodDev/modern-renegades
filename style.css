@@ -1497,6 +1497,7 @@ footer.site-footer .dg-credit span {
 	margin-top: 70px;
 }
 
+.single-episode main,
 .page:not(.home) main,
 .blog main,
 .archive main,
@@ -1538,6 +1539,7 @@ footer.site-footer .dg-credit span {
 }
 
 .page-header,
+.single-episode .entry-header,
 .single-post .entry-header,
 .page .entry-header,
 .entry-footer,
@@ -1550,6 +1552,7 @@ footer.site-footer .dg-credit span {
 }
 
 .page-header,
+.single-episode .entry-header,
 .single-post .entry-header,
 .page .entry-header,
 .entry-footer,
@@ -1702,6 +1705,7 @@ footer.site-footer .dg-credit span {
 	}
 }
 
+.single-episode article,
 .single-post article {
 	width: 90%;
 	margin-left: auto;
@@ -1710,15 +1714,18 @@ footer.site-footer .dg-credit span {
 }
 
 @media (min-width: 762px) {
+	.single-episode .entry-header,
 	.single-post .entry-header {
 		text-align: center;
 	}
 }
 
+.single-episode .post-thumbnail,
 .single-post .post-thumbnail {
 	max-width: 536px;
 }
 
+.single-episode .entry-content,
 .single-post .entry-content {
 	width: 90%;
 	margin-left: auto;
@@ -1735,7 +1742,6 @@ footer.site-footer .dg-credit span {
 	max-width: 780px;
 	padding: 1.5rem;
 	border-top: 1px solid #BB8472;
-	border-bottom: 1px solid #BB8472;
 	text-align: center;
 }
 
@@ -1828,6 +1834,48 @@ footer.site-footer .dg-credit span {
 	}
 }
 
+.player {
+	margin-bottom: 2rem;
+}
+
+.single-episode #fbxt-wrap {
+	margin-bottom: 4.5rem;
+}
+
+.single-episode #fbxt-wrap #fbxt-wrap--inner {
+	font-family: brandon-grotesque, Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+.single-episode #fbxt-wrap #fbxt-wrap--inner .fbxt-header {
+	background-color: #D5B1A9;
+	color: #2A1048;
+}
+
+.single-episode #fbxt-wrap #fbxt-wrap--inner .fbxt-header--logo svg {
+	fill: #F3EEED;
+}
+
+.single-episode #fbxt-wrap #fbxt-wrap--inner .fbxt-header--logo svg circle {
+	fill: #2A1048;
+	opacity: 1;
+}
+
+.single-episode #fbxt-wrap #fbxt-wrap--inner span {
+	color: #2A1048;
+}
+
+.single-episode #fbxt-wrap #fbxt-wrap--inner .fbxt-header--nav .fbxt-header--nav-item a {
+	color: #2A1048;
+}
+
+.single-episode #fbxt-wrap #fbxt-wrap--inner .fbxt-header--nav .fbxt-header--nav-item svg {
+	fill: #2A1048;
+}
+
+.single-episode #fbxt-wrap .fbxt-credits {
+	display: none !important;
+}
+
 /* Comments
 --------------------------------------------- */
 .comments-title {
@@ -1884,6 +1932,7 @@ footer.site-footer .dg-credit span {
 .comments-area {
 	padding-top: 4.5rem;
 	padding-bottom: 4.5rem;
+	border-top: 1px solid #BB8472;
 }
 
 .comment-reply-title {

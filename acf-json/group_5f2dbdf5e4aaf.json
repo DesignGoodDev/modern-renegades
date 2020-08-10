@@ -1,0 +1,81 @@
+{
+    "key": "group_5f2dbdf5e4aaf",
+    "title": "Episode Meta",
+    "fields": [
+        {
+            "key": "field_5f2dbe23d5676",
+            "label": "Episode Number",
+            "name": "episode_number",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f2dbdffd5675",
+            "label": "Libsyn ID",
+            "name": "libsyn_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f2ddba6c94a3",
+            "label": "Display Transcript?",
+            "name": "display_transcript",
+            "type": "true_false",
+            "instructions": "Fusebox Transcript settings are all the way at the bottom of the editor area, all the way beneath the post and beneath Yoast. Just keep scrolling!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "episode"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1596840975
+}

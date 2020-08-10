@@ -132,11 +132,16 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 				return;
 			}
 
-			?>
+		?>
 
 			<div class="post-thumbnail">
 				<div class="thumb-wrap">
-					<?php the_post_thumbnail(); ?>
+					<?php if ( 'episode' === get_post_type() ) :
+						the_post_thumbnail( 'episode-thumbnail' );
+					else :
+						the_post_thumbnail();
+					endif;
+					?>
 				</div>
 			</div><!-- .post-thumbnail -->
 
@@ -170,7 +175,7 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 				</div>
 			</a>
 
-			<?php
+		<?php
 		endif; // End is_singular().
 	}
 endif;
@@ -184,10 +189,10 @@ endif;
 function modern_renegades_excerpt_more() {
 	global $post;
 	$post_id = $post->ID;
-	if ( in_category( 'drc-show-notes' ) )
-		return '...<br><a class="read-more" href="' . get_permalink( $post_id ) . '" title="'. __('Read', 'modern_renegades') . get_the_title( $post_id ).'">'. __('Listen', 'modern_renegades') .'</a>';
+	if ( in_category( 'drc-show-notes' ) || 'episode' === get_post_type() )
+		return '...<br><a class="read-more" href="' . get_permalink( $post_id ) . '" title="'. __('Listen to ', 'modern_renegades') . get_the_title( $post_id ).'">'. __('Listen', 'modern_renegades') .'</a>';
 	else
-		return '...<br><a class="read-more" href="' . get_permalink( $post_id ) . '" title="'. __('Read', 'modern_renegades') . get_the_title( $post_id ).'">'. __('Read Post', 'modern_renegades') .'</a>';
+		return '...<br><a class="read-more" href="' . get_permalink( $post_id ) . '" title="'. __('Read ', 'modern_renegades') . get_the_title( $post_id ).'">'. __('Read Post', 'modern_renegades') .'</a>';
 }
 add_filter( 'excerpt_more', 'modern_renegades_excerpt_more');
 
@@ -210,11 +215,29 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	}
 endif;
 
-// Limit Search Results
-function searchfilter($query) {
+/**
+ * Limit Search Results
+ *
+ */
+function modern_renegades_searchfilter($query) {
 	if ($query->is_search && !is_admin() ) {
-		$query->set('post_type',array('post', 'page'));
+		$query->set('post_type',array('post', 'page', 'episode'));
 	}
 return $query;
 }
-add_filter('pre_get_posts','searchfilter');
+add_filter( 'pre_get_posts' , 'modern_renegades_searchfilter' );
+
+/**
+ * Adjust the archive titles
+ *
+ * @link https://developer.wordpress.org/reference/functions/get_the_archive_title/
+ */
+// function modern_renegades_archive_title( $title ) {
+
+// 	if ( is_post_type_archive() ) {
+// 		$title = sprintf( __( '%s' ), post_type_archive_title( '', false ) );
+// 	}
+
+// 	return $title;
+// }
+// add_filter( 'get_the_archive_title', 'modern_renegades_archive_title' );

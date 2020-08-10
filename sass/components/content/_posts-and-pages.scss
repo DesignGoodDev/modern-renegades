@@ -24,6 +24,7 @@
 	margin-top: 70px;
 }
 
+.single-episode,
 .page:not(.home),
 .blog,
 .archive,
@@ -61,6 +62,7 @@
 }
 
 .page-header,
+.single-episode .entry-header,
 .single-post .entry-header,
 .page .entry-header,
 .entry-footer,
@@ -70,6 +72,7 @@
 }
 
 .page-header,
+.single-episode .entry-header,
 .single-post .entry-header,
 .page .entry-header,
 .entry-footer,
@@ -154,6 +157,7 @@
 	}
 }
 
+// re-work for Episodes
 .blog,
 .archive {
 
@@ -223,8 +227,13 @@
 
 
 	}
+
+	&.post-type-archive-episode {
+
+	}
 }
 
+.single-episode,
 .single-post {
 
 	article {
@@ -256,7 +265,6 @@
 	@include container;
 	padding: 1.5rem;
 	border-top: 1px solid $adobe;
-	border-bottom: 1px solid $adobe;
 	text-align: center;
 
 	h4 {
@@ -348,6 +356,56 @@
 			max-width: none;
 			flex: 1 1 33.333%;
 			padding: 0 1rem;
+		}
+	}
+}
+
+.player {
+	margin-bottom: 2rem;
+}
+
+.single-episode {
+	#fbxt-wrap {
+		margin-bottom: 4.5rem;
+
+		#fbxt-wrap--inner {
+			font-family: $font__main;
+
+			.fbxt-header {
+				background-color: $rose;
+				color: $plum;
+			}
+
+			.fbxt-header--logo {
+
+				svg {
+					fill: $cream;
+
+					circle {
+						fill: $plum;
+						opacity: 1;
+					}
+				}
+			}
+
+			span {
+				color: $plum;
+			}
+
+			.fbxt-header--nav .fbxt-header--nav-item {
+
+				a {
+					color: $plum;
+				}
+
+				svg {
+					fill: $plum;
+				}
+			}
+		}
+
+		.fbxt-credits {
+			display: none !important;
 		}
 	}
 }
