@@ -128,7 +128,7 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 
 		if ( is_singular() ) :
 
-			if ( ! has_post_thumbnail() ) {
+			if ( ! has_post_thumbnail() ) :
 
 				if ( 'page' === get_post_type() ) {
 					return;
@@ -144,8 +144,9 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 					</div>
 				</div>
 
-				<?php
-				}
+			<?php
+					return;
+				endif; // End ! has_post_thumbnail()
 			?>
 
 			<div class="post-thumbnail">
@@ -177,7 +178,10 @@ if ( ! function_exists( 'modern_renegades_post_thumbnail' ) ) :
 					</div>
 				</a>
 
-			<?php return; endif; ?>
+			<?php
+					return;
+				endif; // End ! has_post_thumbnail()
+			?>
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<div class="thumb-wrap">
@@ -262,3 +266,89 @@ add_filter( 'pre_get_posts' , 'modern_renegades_searchfilter' );
 // 	return $title;
 // }
 // add_filter( 'get_the_archive_title', 'modern_renegades_archive_title' );
+
+/**
+ * Fixes for current_page_parent class being incorrectly added
+ * to blog archive and cpt archive in nav menu
+ *
+ * @return $classes
+ *
+ * @link https://core.trac.wordpress.org/ticket/38486 (open ticket)
+ * @link https://wordpress.stackexchange.com/a/351526 (source of fixes)
+ */
+function modern_renegades_remove_cpt_blog_class( $classes, $item, $args ) {
+
+	if( !is_singular( 'post' ) AND !is_category() AND !is_tag() AND !is_date() ):
+
+		$blog_page_id = intval( get_option( 'page_for_posts' ) );
+
+		if( $blog_page_id != 0 AND $item->object_id == $blog_page_id )
+			unset( $classes[ array_search( 'current_page_parent', $classes ) ] );
+
+		endif;
+
+	return $classes;
+
+}
+add_filter( 'nav_menu_css_class', 'modern_renegades_remove_cpt_blog_class', 10, 3 );
+
+/**
+ * Display all Episode Tags
+ */
+function modern_renegades_all_episode_tags() {
+
+	$tags = get_terms( 'episode_tag', array( 'hide_empty=1' ) );
+
+	if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) :
+		$count = count( $tags );
+		$i = 0;
+		$tag_list = '<div class="tag-list">';
+		foreach ( $tags as $tag ) {
+			$i++;
+			$tag_list .= '<a href="' . esc_url( get_term_link( $tag ) ) . '" alt="' . esc_attr( sprintf( __( 'View all episodes tagged %s', 'modern_renegades' ), $tag->name ) ) . '">' . $tag->name . '</a>';
+			if ( $count != $i ) {
+				$tag_list .= ' &middot; ';
+			} else {
+				$tag_list .= '</div>';
+			}
+		}
+		echo '<h3>Episode Tags:</h3>';
+		echo $tag_list;
+	endif;
+}
+
+/**
+ * Display all Episode Tags for Current Episode
+ */
+function modern_renegades_current_episode_tags() {
+	// Get post by post ID.
+	if ( ! $post = get_post() ) {
+		return '';
+	}
+
+	// Get post type by post.
+	$post_type = $post->post_type;
+
+	// Get post type taxonomies.
+	$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+	$out = array();
+
+	foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+		// Get the terms related to post.
+		$terms = get_the_terms( $post->ID, $taxonomy_slug );
+
+		if ( ! empty( $terms ) ) {
+				$out[] = "<h3>" . $taxonomy->label . "</h3>\n<ul>";
+				foreach ( $terms as $term ) {
+						$out[] = sprintf( '<li><a href="%1$s">%2$s</a></li>',
+								esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+								esc_html( $term->name )
+						);
+				}
+				$out[] = "\n</ul>\n";
+		}
+	}
+	return implode( '', $out );
+}

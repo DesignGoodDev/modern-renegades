@@ -13,5 +13,5 @@ if ( ! function_exists( 'be_display_posts_shortcode' ) )
 <hr class="alignwide">
 <div class="alignwide py display-episodes">
   <h3 class="text-center">Recent Episodes</h3>
-  <?php echo do_shortcode( '[display-posts post_type="episode" exclude_current="true" image_size="post-thumbnail" posts_per_page="3" wrapper="div"]' ); ?>
+  <?php echo do_shortcode( '[display-posts post_type="episode" exclude_current="true" image_size="episode-thumbnail" posts_per_page="3" wrapper="div"]' ); ?>
 </div>

@@ -55,6 +55,9 @@
 						wp_kses_post( get_the_title() )
 					)
 				);
+
+				echo modern_renegades_current_episode_tags();
+
 			else:
 				the_excerpt();
 			endif;
@@ -66,7 +69,7 @@
       <?php
       if ( is_singular() ) :
         $display_transcript = get_field('display_transcript');
-        if ( ! empty( $display_transcript ) ):
+        if ( ! empty( $display_transcript ) ) :
           echo do_shortcode( '[fusebox_transcript]' );
         endif;
       endif;
