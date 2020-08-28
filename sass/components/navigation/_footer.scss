@@ -4,6 +4,21 @@ footer.site-footer {
 		@include container-large;
 	}
 
+	.footer-signup {
+		text-align: center;
+		border-top: 1px solid $adobe;
+		padding-top: 2rem;
+		padding-bottom: 1rem;
+
+		form {
+			max-width: 300px;
+		}
+	}
+
+	.gfield {
+		text-align: center;
+	}
+
 	.footer-socials {
 		display: flex;
 		justify-content: center;

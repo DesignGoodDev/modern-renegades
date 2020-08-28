@@ -318,7 +318,10 @@ function modern_renegades_all_episode_tags() {
 }
 
 /**
- * Display all Episode Tags for Current Episode
+ * Display all Episode Tags
+ * (and other taxonomies if added later)
+ * for Current Episode
+ * Displays them as an unordered list with the tax. name as h3
  */
 function modern_renegades_current_episode_tags() {
 	// Get post by post ID.
@@ -351,4 +354,27 @@ function modern_renegades_current_episode_tags() {
 		}
 	}
 	return implode( '', $out );
+}
+
+/**
+ * Display all Post Tags for Current Post
+ */
+function modern_renegades_current_post_tags() {
+
+	$terms = get_the_terms( get_the_ID(), 'post_tag' );
+
+	$tags = array();
+
+	if ( ! empty( $terms ) ) {
+
+		$tags[] = "<h3>Tags</h3>";
+
+		foreach ( $terms as $term ) {
+			$tags[] = sprintf( '<a href="%1$s" class="post-tag">%2$s</a>',
+				esc_url( get_term_link( $term->slug, 'post_tag' ) ),
+				esc_html( $term->name )
+			);
+		}
+	}
+	return implode( '', $tags);
 }

@@ -26,7 +26,6 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<hr>
 		<h2 class="comments-title h4 text-center">
 			<?php
 			$modern_renegades_comment_count = get_comments_number();

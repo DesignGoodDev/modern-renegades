@@ -122,3 +122,26 @@ label {
 		}
 	}
 }
+
+.text-left,
+.align-left {
+	form {
+		.gform_footer {
+			text-align: left;
+		}
+		@media only screen and (min-width: 641px) {
+			padding-left: 0;
+		}
+	}
+}
+
+.has-text-color {
+	.gform_wrapper {
+		form {
+			.field_sublabel_above .ginput_complex.ginput_container label,
+			label.gfield_label {
+				color: inherit;
+			}
+		}
+	}
+}

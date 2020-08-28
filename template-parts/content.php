@@ -51,6 +51,9 @@
 						wp_kses_post( get_the_title() )
 					)
 				);
+
+				echo modern_renegades_current_post_tags();
+
 			else:
 				the_excerpt();
 			endif;

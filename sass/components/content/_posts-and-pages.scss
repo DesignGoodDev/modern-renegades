@@ -409,6 +409,16 @@
 	clear: both;
 }
 
+.post-tag {
+	&::after {
+		content: ', ';
+	}
+
+	&:last-of-type::after {
+		display: none;
+	}
+}
+
 .display-posts-listing {
 
 	.listing-item {

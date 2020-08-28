@@ -56,7 +56,6 @@ h5, .h5 {
 	font-family: $font__headings;
 	font-weight: 600;
 	font-size: 0.9375rem; // 15px
-	text-transform: uppercase;
 	letter-spacing: 0.08rem; // 1.27px
 }
 
@@ -82,7 +81,8 @@ h6, .h6 {
 	// 	font-size: 0.875rem; // 14px
 	// }
 	h5, .h5 {
-		font-size: 1.1875rem; // 19px
+		font-size: 1.3125rem; // 21px
+		letter-spacing: 0.0875rem; // 1.4px
 	}
 	h6, .h6 {
 		font-size: 1.1875rem; // 19px

@@ -12,7 +12,18 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+
 		<div class="footer-container">
+
+			<?php
+				$form_heading = get_field( 'footer_signup_form_heading', 'option');
+			?>
+
+			<div class="footer-signup">
+				<h5 style="margin-bottom: 0;"><?php echo $form_heading; ?></h5>
+				<?php echo do_shortcode( '[gravityform id="2" title="false" description="false"]' ); ?>
+			</div>
+
 			<?php
 				$facebook  = get_field( 'facebook_url', 'option' );
 				$instagram = get_field( 'instagram_url', 'option' );
