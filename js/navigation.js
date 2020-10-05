@@ -72,7 +72,7 @@
 	/**
 	 * Sets or removes .focus class on an element.
 	 */
-	function toggleFocus() {
+	function toggleFocus( event ) {
 		if ( event.type === 'focus' || event.type === 'blur' ) {
 			let self = this;
 			// Move up through the ancestors of the current link until we hit .nav-menu.
@@ -94,6 +94,28 @@
 				}
 			}
 			menuItem.classList.toggle( 'focus' );
+		}
+	}
+
+	/**
+	 * Handles anchor links in menu - Homepage only
+	 */
+	if ( ! document.body.classList.contains( 'home' ) ) {
+		return;
+	}
+
+	const anchorLinks = menu.querySelectorAll( 'a[href^="/#"]' );
+
+	for ( const anchor of anchorLinks ) {
+		anchor.addEventListener( 'click', handleAnchorLink );
+	}
+
+	function handleAnchorLink() {
+		siteNavigation.classList.toggle( 'toggled' );
+		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
+			button.setAttribute( 'aria-expanded', 'false' );
+		} else {
+			button.setAttribute( 'aria-expanded', 'true' );
 		}
 	}
 }() );
