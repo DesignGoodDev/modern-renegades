@@ -1,0 +1,175 @@
+{
+    "key": "group_600f36e5579ba",
+    "title": "Links",
+    "fields": [
+        {
+            "key": "field_600f371148356",
+            "label": "Latest Podcast Episode Text",
+            "name": "latest_podcast_episode_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_600f36f548355",
+            "label": "Latest Blog Post Text",
+            "name": "latest_blog_post_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_600f374d48358",
+            "label": "Additional Buttons",
+            "name": "additional_buttons",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_600f37570722a": {
+                    "key": "layout_600f37570722a",
+                    "name": "gradient_button",
+                    "label": "Gradient Button",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_600f377d48359",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_600f37974835a": {
+                    "key": "layout_600f37974835a",
+                    "name": "purple_button",
+                    "label": "Purple Button",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_600f37974835b",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_600f37ac4835c": {
+                    "key": "layout_600f37ac4835c",
+                    "name": "text_button_block",
+                    "label": "Text + Button Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_600f37ca4835e",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_600f37ac4835d",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Button",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/links.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1611610435
+}

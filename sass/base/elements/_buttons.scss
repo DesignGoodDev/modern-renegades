@@ -7,18 +7,18 @@ a.button,
 .wp-block-button a,
 .wp-block-button .wp-block-button__link,
 .gform_footer input[type="submit"].gform_button.button {
+	padding: 1em 1.25em 0.9em;
+	color: $white;
+	font-weight: 400;
+	font-size: 0.8125rem; // 13px
+	line-height: 1;
+	letter-spacing: 0.05rem; // 0.8px
+	text-transform: uppercase;
+	text-decoration: none;
 	background: $color__background-button;
 	border: 0;
 	border-radius: 1.5rem; // 24px
-	color: $white;
 	cursor: pointer;
-	font-size: 0.8125rem; // 13px
-	line-height: 1;
-	text-decoration: none;
-	text-transform: uppercase;
-	letter-spacing: 0.05rem; // 0.8px
-	padding: 1em 1.25em 0.9em;
-	font-weight: 400;
 
 	&:hover {
 		background: linear-gradient(180deg, $rose 0%, $plum 100%);
@@ -31,6 +31,7 @@ a.button,
 }
 
 .has-plum-background-color {
+
 	button,
 	input[type="button"],
 	input[type="reset"],
@@ -45,5 +46,24 @@ a.button,
 		&:hover {
 			background: linear-gradient(180deg, $rose 0%, $adobe 100%);
 		}
+	}
+}
+
+.button.button--gradient {
+	background: linear-gradient(180deg, $rose 0%, $plum 100%);
+
+	&:hover {
+		background: $plum;
+	}
+}
+
+.button.button--ghost {
+	color: $adobe;
+	background: transparent;
+	border: 1px solid $adobe;
+
+	&:hover {
+		color: $white;
+		background: linear-gradient(180deg, $rose 0%, $adobe 100%);
 	}
 }

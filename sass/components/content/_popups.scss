@@ -1,0 +1,94 @@
+/* Pop Up Styles */
+.pum-container p {
+	font-weight: lighter;
+}
+
+.pum-container .pum-content.popmake-content {
+	padding: 150px 20px 20px;
+	// color: #f7f7f5;
+	letter-spacing: 0.91px;
+	text-align: center;
+	background-color: $cream;
+	background-image: url('inc/images/icon-lightning.svg');
+	background-repeat: no-repeat;
+	background-position: center 50px;
+	background-size: 50px 73px;
+}
+
+.pum-container.popmake .pum-content+.pum-close {
+	top: 15px;
+	color: $plum;
+	font-weight: 400;
+	font-size: 38px;
+	font-family: $font__main;
+}
+
+.pum-container.popmake .pum-content+.pum-close:focus {
+	outline: none;
+}
+
+.pum.pum-overlay {
+	background-color: rgba($almond, 0.86);
+}
+
+.pum-content .gform_wrapper div.validation_error {
+	display: none;
+}
+
+.pum-content .gform_wrapper .validation_message {
+	padding-top: 0 !important;
+	color: #f3c0c0;
+	font-weight: lighter;
+	text-align: center;
+}
+
+.pum-content .gform_wrapper li.gfield.gfield_error {
+	padding-top: 0;
+}
+
+@media (min-width: 840px) {
+	.pum-container h2 {
+		font-size: 32px;
+	}
+
+	.pum-container p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.pum-container p+p {
+		margin-top: 20px;
+	}
+
+	.pum-container.pum-responsive {
+		position: static !important;
+		width: 525px !important;
+		height: 525px !important;
+		margin-top: 240px;
+		margin-right: auto !important;
+		margin-left: auto !important;
+	}
+
+	.pum-container .pum-content.popmake-content {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		padding: 120px 60px 20px;
+		border-radius: 50%;
+	}
+
+	.pum-container .gform_wrapper {
+		margin-top: 0;
+	}
+
+	.pum-container.popmake .pum-content+.pum-close {
+		position: relative;
+		top: -100%;
+		left: 95%;
+		color: $plum;
+		font-size: 48px;
+	}
+}

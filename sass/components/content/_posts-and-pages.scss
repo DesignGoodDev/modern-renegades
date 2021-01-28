@@ -19,9 +19,13 @@
 // if needed, would could instead use
 // the .site-main to hide overflow-x
 #page {
-	overflow-x: hidden;
 	position: relative;
 	margin-top: 70px;
+	overflow-x: hidden;
+}
+
+.page-template-links #page {
+	margin-top: 0;
 }
 
 .single-episode,
@@ -36,7 +40,9 @@
 	}
 }
 
-
+.page-template-links main.site-main {
+	padding-top: 2rem;
+}
 
 .page-header,
 .entry-header {
@@ -57,7 +63,6 @@
 	display: none;
 }
 
-
 .error404 {
 	.page-content {
 		@include container-large;
@@ -67,19 +72,24 @@
 .search {
 	.page-container {
 		@include container-large;
+
 		* {
 			text-align: left !important;
 		}
+
 		.post-thumbnail {
 			display: none;
 		}
+
 		article {
 			padding: 3rem 1.5rem;
 			border-bottom: 1px solid $adobe;
 		}
+
 		.entry-header {
 			margin: 0;
 		}
+
 		.entry-meta {
 			margin-bottom: 1.5rem;
 		}
@@ -113,31 +123,35 @@
 		position: relative;
 
 		&::after {
-			content: url(inc/images/icon-moon-adobe.svg);
 			position: absolute;
-			width: 100%;
-			left: 0;
 			bottom: -3.5rem;
+			left: 0;
+			width: 100%;
+			content: url(inc/images/icon-moon-adobe.svg);
 		}
 	}
 }
 
+.page-template-links .entry-header {
+	margin-bottom: 1.5rem;
+}
+
 .post-thumbnail {
+	position: relative;
 	display: block;
 	margin: 0 auto 3rem;
-	position: relative;
 
 	&::after {
-		content: '';
 		position: absolute;
-		width: 50%;
-		height: auto;
-		padding-top: 84%;
-		border-radius: 400px;
-		border: 1px solid $adobe;
 		top: -4%;
 		left: 25%;
 		z-index: 1;
+		width: 50%;
+		height: auto;
+		padding-top: 84%;
+		border: 1px solid $adobe;
+		border-radius: 400px;
+		content: '';
 	}
 
 	.thumb-wrap {
@@ -147,47 +161,47 @@
 
 		img {
 			position: absolute;
-			width: 100%;
-			height: 100%;
 			top: 0;
 			left: 0;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
 			object-position: center;
 		}
 	}
 
 	.placeholder {
+		position: relative;
 		width: 100%;
 		padding-top: 78%;
 		background-color: $rose;
-		position: relative;
 
-		& > div {
+		&>div {
 			position: absolute;
-			width: 100%;
-			height: 100%;
 			top: 0;
 			left: 0;
 			display: flex;
-			justify-content: center;
 			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
 		}
 
 		svg {
-			fill: $adobe;
 			width: 225px;
-			height: 180px;
 			max-width: 100%;
+			height: 180px;
+			fill: $adobe;
 		}
 	}
 }
-
 
 .blog,
 .archive {
 
 	article {
 		@include container-large;
+
 		margin-bottom: 6rem;
 	}
 
@@ -204,8 +218,8 @@
 			&:first-of-type {
 				.entry-wrap {
 					width: 70%;
-					margin-left: auto;
 					margin-right: auto;
+					margin-left: auto;
 					text-align: center;
 				}
 			}
@@ -221,19 +235,19 @@
 				width: 50%;
 
 				&::after {
-					width: 50%;
-					padding-top: 34%;
 					top: auto;
 					bottom: -22%;
 					left: 0;
+					width: 50%;
+					padding-top: 34%;
 				}
 			}
 
 			.entry-wrap {
 				flex: 1 0 50%;
 				width: 50%;
-				margin-left: 2.5rem;
 				margin-right: 2.5rem;
+				margin-left: 2.5rem;
 			}
 
 			.entry-header {
@@ -244,6 +258,7 @@
 				.post-thumbnail {
 					order: 2;
 				}
+
 				.entry-wrap {
 					order: 1;
 				}
@@ -259,11 +274,11 @@
 		}
 
 		&::after {
+			top: 0;
+			right: -12%;
+			left: auto;
 			width: 24%;
 			padding-top: 36%;
-			top: 0;
-			left: auto;
-			right: -12%;
 		}
 	}
 
@@ -272,31 +287,30 @@
 	}
 }
 
-
 .post-type-archive-episode {
 	.post-thumbnail {
 
 		// play button
 		&::before {
-			content: url(inc/images/icon-play.svg);
-			width: 50px;
-			height: 50px;
-			display: block;
 			position: absolute;
 			right: 0;
 			bottom: -25px;
 			z-index: 1;
+			display: block;
+			width: 50px;
+			height: 50px;
+			content: url(inc/images/icon-play.svg);
 		}
-
 	}
+
 	@media (min-width: $large) {
 		.episode-grid {
 			@include container-large;
 
 			display: flex;
-			justify-content: flex-start;
-			align-items: flex-start;
 			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: flex-start;
 		}
 
 		article {
@@ -308,11 +322,11 @@
 		}
 
 		article:not(:first-of-type) {
-			flex: 0 1 33.333%;
 			display: block;
-			padding-left: 20px;
-			padding-right: 20px;
+			flex: 0 1 33.333%;
 			margin: 0 0 3rem;
+			padding-right: 20px;
+			padding-left: 20px;
 
 			.post-thumbnail {
 				width: 100%;
@@ -323,8 +337,8 @@
 			}
 
 			.entry-wrap {
-				margin: 0;
 				width: 100%;
+				margin: 0;
 			}
 
 			.entry-title {
@@ -358,6 +372,7 @@
 
 	.entry-content {
 		@include container;
+
 		max-width: 715px;
 		padding-bottom: 4rem;
 
@@ -369,9 +384,10 @@
 
 .share-links__wrap {
 	@include container;
+
 	padding: 1.5rem;
-	border-top: 1px solid $adobe;
 	text-align: center;
+	border-top: 1px solid $adobe;
 
 	h4 {
 		margin-top: 0;
@@ -385,18 +401,18 @@
 	}
 
 	a {
-		margin-left: 0.5rem;
 		margin-right: 0.5rem;
+		margin-left: 0.5rem;
 	}
 }
 
 .subscribe-links__wrap {
-	border-top: 0;
 	padding: 6rem 1.5rem;
+	border-top: 0;
 
 	h4 {
-		text-transform: none;
 		margin-bottom: 3.125rem;
+		text-transform: none;
 	}
 }
 
@@ -438,49 +454,48 @@
 
 	.title {
 		color: $adobe;
+		font-size: 1.3125rem;
 		font-family: $font__headings;
-		font-size: 1.3125rem;// 21px
 		letter-spacing: 0.0875; // 1.4px
-		text-decoration: none;
+		text-decoration: none; // 21px
 	}
 
 	.image {
 		position: relative;
 		width: 100%;
-		padding-top: 78%;
 		margin-bottom: 1.5rem;
+		padding-top: 78%;
 
 		&::after {
-			content: '';
 			position: absolute;
-			width: 50%;
-			height: auto;
-			padding-top: 84%;
-			border-radius: 400px;
-			border: 1px solid $adobe;
 			top: -4%;
 			left: 25%;
 			z-index: 1;
+			width: 50%;
+			height: auto;
+			padding-top: 84%;
+			border: 1px solid $adobe;
+			border-radius: 400px;
+			content: '';
 		}
 
 		img {
 			position: absolute;
-			width: 100%;
-			height: 100%;
 			top: 0;
 			left: 0;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
 			object-position: center;
 		}
 	}
 
 	@media (min-width: $medium) {
-
 		display: flex;
 
 		.listing-item {
-			max-width: none;
 			flex: 1 1 33.333%;
+			max-width: none;
 			padding: 0 1rem;
 		}
 	}
@@ -491,14 +506,14 @@
 		padding-top: 100%;
 
 		&::before {
-			content: url(inc/images/icon-play.svg);
-			width: 50px;
-			height: 50px;
-			display: block;
 			position: absolute;
 			right: 0;
 			bottom: -25px;
 			z-index: 1;
+			display: block;
+			width: 50px;
+			height: 50px;
+			content: url(inc/images/icon-play.svg);
 		}
 
 		&::after {
@@ -519,8 +534,8 @@
 			font-family: $font__main;
 
 			.fbxt-header {
-				background-color: $rose;
 				color: $plum;
+				background-color: $rose;
 			}
 
 			.fbxt-header--logo {
@@ -529,8 +544,8 @@
 					fill: $cream;
 
 					circle {
-						fill: $plum;
 						opacity: 1;
+						fill: $plum;
 					}
 				}
 			}

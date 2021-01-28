@@ -14,15 +14,15 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
+	padding: 5px 8px;
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: 0;
-	padding: 5px 8px;
 
 	&:focus {
 		color: $color__text-input-focus;
-		outline: none;
 		border: 1px solid $adobe;
+		outline: none;
 	}
 }
 
@@ -41,21 +41,22 @@ textarea {
 
 label {
 	display: inline-block;
-	font-size: 1rem;
 	margin-bottom: 0.5rem;
+	font-size: 1rem;
 }
 
 
 /* Gravity Forms Overrides */
 .gform_wrapper {
 	form {
+
 		.field_sublabel_above .ginput_complex.ginput_container label,
 		label.gfield_label {
-			font-size: 1rem;
-			font-weight: 400;
-			letter-spacing: normal;
-			line-height: 1.5;
 			color: $adobe;
+			font-weight: 400;
+			font-size: 1rem;
+			line-height: 1.5;
+			letter-spacing: normal;
 		}
 
 		.gfield_contains_required .ginput_complex.ginput_container label {
@@ -72,16 +73,16 @@ label {
 		}
 
 		span.gfield_required {
-			color: $adobe;
 			margin-left: 4px;
+			color: $adobe;
 		}
 
 		.gfield_contains_required .ginput_complex.ginput_container label {
 			display: inline-block;
 
 			&::after {
-				content: '*';
 				padding-left: 4px;
+				content: '*';
 			}
 		}
 
@@ -93,6 +94,7 @@ label {
 		ul.gfield_checkbox,
 		ul.gfield_radio {
 			li {
+
 				input,
 				input[type=checkbox],
 				input[type=radio] {
@@ -106,13 +108,14 @@ label {
 		}
 
 		.gform_footer {
+			padding-top: 0;
 			text-align: center;
 
 			@media only screen and (max-width: 641px) {
 				input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
 					width: auto;
-					line-height: 1;
 					min-height: 0;
+					line-height: 1;
 				}
 			}
 		}
@@ -129,6 +132,7 @@ label {
 		.gform_footer {
 			text-align: left;
 		}
+
 		@media only screen and (min-width: 641px) {
 			padding-left: 0;
 		}
@@ -138,6 +142,7 @@ label {
 .has-text-color {
 	.gform_wrapper {
 		form {
+
 			.field_sublabel_above .ginput_complex.ginput_container label,
 			label.gfield_label {
 				color: inherit;
